@@ -1,11 +1,7 @@
 " You can find a list of commands here: https://jb.gg/h38q75
 " Find more examples here: https://jb.gg/share-ideavimrc
 
-
-"" -- Suggested options --
-" Show a few lines of context around the cursor. Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
-set scrolloff=5
+set scrolloff=15
 
 " Do incremental searching.
 set incsearch
@@ -13,62 +9,86 @@ set incsearch
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
+"" Plugins
+
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 
-" Highlight copied text
 Plug 'machakann/vim-highlightedyank'
-" Commentary plugin
 Plug 'tpope/vim-commentary'
+set sneak
 
-
-"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"" Map \r to the Reformat Code action
-"map \r <Action>(ReformatCode)
-
-"" Map <leader>d to start debug
-"map <leader>d <Action>(Debug)
-
-"" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
 set ideajoin
 
 "" set <leader> to <Space>
 let mapleader = " "
 
+"" Code
+nmap <Leader>ca <action>(ShowIntentionActions)
+nmap <Leader>cr <action>(RenameElement)
+nmap <Leader>cp <action>(ParameterInfo)
+nmap <Leader>cf <action>(ReformatCode)
+nmap <Leader>cb <action>(ToggleLineBreakpoint)
+nmap <Leader>ck <action>(ShowErrorDescription)
+nmap <Leader>cd <action>(QuickTypeDefinition)
+
+"" Files
+nmap <Leader>fcc <action>(CloseContent)
+nmap <Leader>fca <action>(CloseAllEditors)
+nmap <Leader>fco <action>(CloseAllEditorsButActive)
+nmap <Leader>fr <action>(ReopenClosedTab)
+nmap <Leader>fo <action>(GotoFile)
+nmap <Leader>fn <action>(NewFile)
+nmap <Leader>fl <action>(MoveTabRight)
+nmap <Leader>fh <action>(MoveEditorToOppositeTabGroup)
+
+"" Projects
+nmap <Leader>po <action>(ManageRecentProjects)
+nmap <Leader>pg <action>(Vcs.VcsClone)
+nmap <Leader>pc <action>(CloseProject)
+nmap <Leader>pn <action>(NewProject)
+
+"" Git
+nmap <Leader>gl <action>(Vcs.UpdateProject)
+nmap <Leader>gp <action>(Vcs.Push)
+nmap <Leader>gc <action>(CheckinProject)
+nmap <Leader>gf <action>(Git.Fetch)
+nmap <Leader>gm <action>(Git.Merge)
+nmap <Leader>gbs <action>(Git.Branches)
+nmap <Leader>gbn <action>(Git.CreateNewBranch)
+
+"" Actions
+nmap <Leader>ar <action>(Run)
+nmap <Leader>ad <action>(Debug)
+nmap <Leader>ab <action>(Rust.Build)
+
+"" Vim
+nmap <Leader>vv <action>(VimActions)
+nmap <Leader>vr <action>(IdeaVim.ReloadVimRc.reload)
+nmap <Leader>vx <action>(VimPluginToggle)
+
+"" Windows
+nmap <Leader>wt <action>(ActivateTerminalToolWindow)
+nmap <Leader>ww <action>(HideAllWindows)
+
 "" Editor
-nmap <leader>run <action>(Run)
-nmap <leader>debug <action>(Debug)
-nmap <leader>new <action>(NewFile)
-nmap <leader>a <action>(ShowIntentionAction)
-nmap <leader>p <action>(ParameterInfo)
-nmap <leader>r <action>(RenameElement)
-nmap <leader>fmt <action>(ReformatCode)
-nmap <leader>vim <action>(VimActions)
-nmap <leader>vrl <action>(IdeaVim.ReloadVimRc.reload)
-nmap <leader>x :q<Cr>
-nmap <leader>X <action>(ReopenClosedTab)
 nmap <leader>/ <action>(FindInPath)
 nmap <leader><leader> <action>(CodeCompletion)
 nmap <leader> <Nop>
 
-"" Navigation
+"" Goto
 nmap gi <action>(GotoImplementation)
 nmap gn <action>(ShowUsages)
 nmap gs <action>(GotoTest)
 
+""" Languages
+
+"" Rust
+nmap <Leader>lrr <action>(Cargo.RefreshCargoProject)
+
+"" Visibility
+" C# show only top level class items with zm
 nmap zm zMzozo
 
+"" Movement
 nnoremap J 32jzz
 nnoremap K 32kzz
-
-"" Git
-nmap <leader>gf <action>(Git.Fetch)
-nmap <leader>gl <action>(Git.Pull)
-nmap <leader>gp :!git push<Cr>
-nmap <leader>gnb <action>(Git.CreateNewBranch)
-nmap <leader>gnt <action>(Git.CreateNewTag)
-nmap <leader>gm <action>(Git.Merge)
-
-"" Action
-nmap <Tab>o <action>(GotoFile)
-nmap <Tab>u <action>(Git.Branches)
