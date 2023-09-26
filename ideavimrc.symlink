@@ -30,82 +30,74 @@ set ideajoin
 let mapleader = " "
 
 "" Code
-nmap <Leader>ca <action>(ShowIntentionActions)
-nmap <Leader>cr <action>(RenameElement)
-nmap <Leader>cp <action>(ParameterInfo)
-nmap <Leader>cf <action>(ReformatCode)
-nmap <Leader>cb <action>(ToggleLineBreakpoint)
-nmap <Leader>ck <action>(ShowErrorDescription)
-nmap <Leader>cd <action>(QuickTypeDefinition)
+nnoremap <Leader>ca :action ShowIntentionActions<Cr>
+nnoremap <Leader>cr :action RenameElement<Cr>
+nnoremap <Leader>cp :action ParameterInfo<Cr>
+nnoremap <Leader>cf :action ReformatCode<Cr>
+nnoremap <Leader>cb :action ToggleLineBreakpoint<Cr>
+nnoremap <Leader>ck :action ShowErrorDescription<Cr>
+nnoremap <Leader>cd :action QuickTypeDefinition<Cr>
 
 "" Files
-nmap <Leader>fco <action>(CloseAllEditorsButActive)
-nmap <Leader>fr <action>(ReopenClosedTab)
-nmap <Leader>fo <action>(GotoFile)
-nmap <Leader>fn <action>(NewFile)
-nmap <Leader>fl <action>(MoveTabRight)
-nmap <Leader>fh <action>(MoveEditorToOppositeTabGroup)
-
-command! qo action CloseAllEditorsButActive
+nnoremap <Leader>fo :action GotoFile<Cr>
+nnoremap <Leader>fn :action NewFile<Cr>
+nnoremap <Leader>fl :action MoveTabRight<Cr>
+nnoremap <Leader>fh :action MoveEditorToOppositeTabGroup<Cr>
 
 "" Projects
-nmap <Leader>po <action>(ManageRecentProjects)
-nmap <Leader>pg <action>(Vcs.VcsClone)
-nmap <Leader>pc <action>(CloseProject)
-nmap <Leader>pn <action>(NewProject)
+nnoremap <Leader>po :action ManageRecentProjects<Cr>
+nnoremap <Leader>pg :action Vcs.VcsClone<Cr>
+nnoremap <Leader>pc :action CloseProject<Cr>
+nnoremap <Leader>pn :action NewProject<Cr>
 nnoremap <Leader>pj :action NextProjectWindow<Cr>
 nnoremap <Leader>pk :action PreviousProjectWindow<Cr>
 nnoremap <Leader>pw :action OpenProjectWindows<Cr>
 
 "" Git
-nmap <Leader>gl <action>(Vcs.UpdateProject)
-nmap <Leader>gp <action>(Vcs.Push)
-nmap <Leader>gg <action>(CheckinProject)
-nmap <Leader>ga <action>(Git.Add)
-nmap <Leader>gf <action>(Git.Fetch)
-nmap <Leader>gm <action>(Git.Merge)
-nmap <Leader>gbs <action>(Git.Branches)
-nmap <Leader>gbn <action>(Git.CreateNewBranch)
+nnoremap <Leader>gl :action Vcs.UpdateProject<Cr>
+nnoremap <Leader>gp :action Vcs.Push<Cr>
+nnoremap <Leader>gg :action CheckinProject<Cr>
+nnoremap <Leader>ga :action Git.Add<Cr>
+nnoremap <Leader>gf :action Git.Fetch<Cr>
+nnoremap <Leader>gm :action Git.Merge<Cr>
+nnoremap <Leader>gbs :action Git.Branches<Cr>
+nnoremap <Leader>gbn :action Git.CreateNewBranch<Cr>
 
 "" Actions
-nmap <Leader>ar <action>(Run)
-nmap <Leader>ad <action>(Debug)
-nmap <Leader>ab <action>(Rust.Build)
+nnoremap <Leader>ar :action Run<Cr>
+nnoremap <Leader>ad :action Debug<Cr>
+nnoremap <Leader>ab :action Rust.Build<Cr>
 
 "" Vim
-nmap <Leader>vv <action>(VimActions)
-nmap <Leader>vr <action>(IdeaVim.ReloadVimRc.reload)
-nmap <Leader>vx <action>(VimPluginToggle)
+nnoremap <Leader>vv :action VimActions<Cr>
+nnoremap <Leader>vr :action IdeaVim.ReloadVimRc.reload<Cr>
+nnoremap <Leader>vx :action VimPluginToggle<Cr>
 
 "" Windows
-nmap <Leader>wt <action>(ActivateTerminalToolWindow)
-nmap <Leader>wr <action>(ActivateRunToolWindow)
-nmap <Leader>ww <action>(HideAllWindows)
+nnoremap <Leader>wt :action ActivateTerminalToolWindow<Cr>
+nnoremap <Leader>wr :action ActivateRunToolWindow<Cr>
+nnoremap <Leader>ww :action HideAllWindows<Cr>
 
 "" Editor
-nmap <leader>/ <action>(FindInPath)
+nnoremap <leader>/ :action FindInPath<Cr>
 nnoremap <Leader>s /
 nnoremap <Leader>S :action FindInPath<Cr>
-nmap <leader><leader> <action>(CodeCompletion)
-nmap <leader> <Esc>
+nnoremap <leader><leader> :action CodeCompletion<Cr>
+nnoremap <leader> <Esc>
 
 "" Goto
-nmap gi <action>(GotoImplementation)
-nmap gn <action>(ShowUsages)
-nmap gs <action>(GotoTest)
-nmap gp <action>(GotoSuperMethod)
-nmap ge <action>(GotoNextError)
-nmap gE <action>(GotoPrevError)
+nnoremap gi :action GotoImplementation<Cr>
+nnoremap gn :action ShowUsages<Cr>
+nnoremap gs :action GotoTest<Cr>
+nnoremap gp :action GotoSuperMethod<Cr>
+nnoremap ge :action GotoNextError<Cr>
+nnoremap gE :action GotoPrevError<Cr>
 
 """ Languages
 
 "" Rust
-nmap <Leader>lrr <action>(Cargo.RefreshCargoProject)
+nnoremap <Leader>lrr :action Cargo.RefreshCargoProject<Cr>
 
 "" Visibility
 " C# show only top level class items with zm
-nmap zm zMzozo
-
-"" Movement
-nnoremap J 32jzz
-nnoremap K 32kzz
+nnoremap zm zMzozo
