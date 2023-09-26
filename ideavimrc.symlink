@@ -1,10 +1,17 @@
 " You can find a list of commands here: https://jb.gg/h38q75Nop
 " Find more examples here: https://jb.gg/share-ideavimrc
 
+"" Scroll
 set scrolloff=15
+set startofline
 
-" Do incremental searching.
+"" Searching
 set incsearch
+set ignorecase
+set hlsearch
+
+"" Substitution
+set gdefault
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
@@ -32,14 +39,14 @@ nmap <Leader>ck <action>(ShowErrorDescription)
 nmap <Leader>cd <action>(QuickTypeDefinition)
 
 "" Files
-nmap <Leader>fcc <action>(CloseContent)
-nmap <Leader>fca <action>(CloseAllEditors)
 nmap <Leader>fco <action>(CloseAllEditorsButActive)
 nmap <Leader>fr <action>(ReopenClosedTab)
 nmap <Leader>fo <action>(GotoFile)
 nmap <Leader>fn <action>(NewFile)
 nmap <Leader>fl <action>(MoveTabRight)
 nmap <Leader>fh <action>(MoveEditorToOppositeTabGroup)
+
+command! qo action CloseAllEditorsButActive
 
 "" Projects
 nmap <Leader>po <action>(ManageRecentProjects)
@@ -77,6 +84,8 @@ nmap <Leader>ww <action>(HideAllWindows)
 
 "" Editor
 nmap <leader>/ <action>(FindInPath)
+nnoremap <Leader>s /
+nnoremap <Leader>S :action FindInPath<Cr>
 nmap <leader><leader> <action>(CodeCompletion)
 nmap <leader> <Esc>
 
@@ -87,8 +96,6 @@ nmap gs <action>(GotoTest)
 nmap gp <action>(GotoSuperMethod)
 nmap ge <action>(GotoNextError)
 nmap gE <action>(GotoPrevError)
-nnoremap go <C-o>
-nnoremap gu <C-i>
 
 """ Languages
 
