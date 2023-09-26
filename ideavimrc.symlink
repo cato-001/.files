@@ -51,6 +51,7 @@ nmap <Leader>pn <action>(NewProject)
 nmap <Leader>gl <action>(Vcs.UpdateProject)
 nmap <Leader>gp <action>(Vcs.Push)
 nmap <Leader>gc <action>(CheckinProject)
+nmap <Leader>ga <action>(Git.Add)
 nmap <Leader>gf <action>(Git.Fetch)
 nmap <Leader>gm <action>(Git.Merge)
 nmap <Leader>gbs <action>(Git.Branches)
@@ -68,6 +69,7 @@ nmap <Leader>vx <action>(VimPluginToggle)
 
 "" Windows
 nmap <Leader>wt <action>(ActivateTerminalToolWindow)
+nmap <Leader>wr <action>(ActivateRunToolWindow)
 nmap <Leader>ww <action>(HideAllWindows)
 
 "" Editor
@@ -79,6 +81,11 @@ nmap <leader> <Nop>
 nmap gi <action>(GotoImplementation)
 nmap gn <action>(ShowUsages)
 nmap gs <action>(GotoTest)
+nmap gp <action>(GotoSuperMethod)
+nmap ge <action>(GotoNextError)
+nmap gE <action>(GotoPrevError)
+nnoremap go <C-o>
+nnoremap gu <C-i>
 
 """ Languages
 
