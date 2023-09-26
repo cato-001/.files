@@ -22,7 +22,6 @@ map Q gq
 
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
-set sneak
 
 set ideajoin
 
@@ -67,6 +66,7 @@ nnoremap <Leader>gbn :action Git.CreateNewBranch<Cr>
 nnoremap <Leader>ar :action Run<Cr>
 nnoremap <Leader>ad :action Debug<Cr>
 nnoremap <Leader>ab :action Rust.Build<Cr>
+nnoremap <Leader>aa :action ChooseRunConfiguration<Cr>
 
 "" Vim
 nnoremap <Leader>vv :action VimActions<Cr>
