@@ -1,4 +1,4 @@
-" You can find a list of commands here: https://jb.gg/h38q75
+" You can find a list of commands here: https://jb.gg/h38q75Nop
 " Find more examples here: https://jb.gg/share-ideavimrc
 
 set scrolloff=15
@@ -46,11 +46,14 @@ nmap <Leader>po <action>(ManageRecentProjects)
 nmap <Leader>pg <action>(Vcs.VcsClone)
 nmap <Leader>pc <action>(CloseProject)
 nmap <Leader>pn <action>(NewProject)
+nnoremap <Leader>pj :action NextProjectWindow<Cr>
+nnoremap <Leader>pk :action PreviousProjectWindow<Cr>
+nnoremap <Leader>pp :action OpenProjectWindows<Cr>
 
 "" Git
 nmap <Leader>gl <action>(Vcs.UpdateProject)
 nmap <Leader>gp <action>(Vcs.Push)
-nmap <Leader>gc <action>(CheckinProject)
+nmap <Leader>gg <action>(CheckinProject)
 nmap <Leader>ga <action>(Git.Add)
 nmap <Leader>gf <action>(Git.Fetch)
 nmap <Leader>gm <action>(Git.Merge)
@@ -75,7 +78,7 @@ nmap <Leader>ww <action>(HideAllWindows)
 "" Editor
 nmap <leader>/ <action>(FindInPath)
 nmap <leader><leader> <action>(CodeCompletion)
-nmap <leader> <Nop>
+nmap <leader> <Esc>
 
 "" Goto
 nmap gi <action>(GotoImplementation)
