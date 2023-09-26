@@ -48,7 +48,7 @@ nmap <Leader>pc <action>(CloseProject)
 nmap <Leader>pn <action>(NewProject)
 nnoremap <Leader>pj :action NextProjectWindow<Cr>
 nnoremap <Leader>pk :action PreviousProjectWindow<Cr>
-nnoremap <Leader>pp :action OpenProjectWindows<Cr>
+nnoremap <Leader>pw :action OpenProjectWindows<Cr>
 
 "" Git
 nmap <Leader>gl <action>(Vcs.UpdateProject)
