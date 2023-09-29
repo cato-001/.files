@@ -2,7 +2,7 @@
 " Find more examples here: https://jb.gg/share-ideavimrc
 
 "" Scroll
-set scrolloff=15
+set scrolloff=10
 set startofline
 
 "" Searching
@@ -29,74 +29,78 @@ set ideajoin
 let mapleader = " "
 
 "" Code
-nnoremap <Leader>ca :action ShowIntentionActions<Cr>
-nnoremap <Leader>cr :action RenameElement<Cr>
-nnoremap <Leader>cp :action ParameterInfo<Cr>
-nnoremap <Leader>cf :action ReformatCode<Cr>
-nnoremap <Leader>cb :action ToggleLineBreakpoint<Cr>
-nnoremap <Leader>ck :action ShowErrorDescription<Cr>
-nnoremap <Leader>cd :action QuickTypeDefinition<Cr>
+noremap <Leader>ca :action ShowIntentionActions<Cr>
+noremap <Leader>cr :action RenameElement<Cr>
+noremap <Leader>cp :action ParameterInfo<Cr>
+noremap <Leader>cf :action ReformatCode<Cr>
+noremap <Leader>cb :action ToggleLineBreakpoint<Cr>
+noremap <Leader>ck :action ShowErrorDescription<Cr>
+noremap <Leader>cd :action QuickTypeDefinition<Cr>
 
 "" Files
-nnoremap <Leader>fo :action GotoFile<Cr>
-nnoremap <Leader>fn :action NewFile<Cr>
-nnoremap <Leader>fl :action MoveTabRight<Cr>
-nnoremap <Leader>fh :action MoveEditorToOppositeTabGroup<Cr>
+noremap <Leader>fo :action GotoFile<Cr>
+noremap <Leader>fn :action NewFile<Cr>
+noremap <Leader>fl :action MoveTabRight<Cr>
+noremap <Leader>fh :action MoveEditorToOppositeTabGroup<Cr>
 
 "" Projects
-nnoremap <Leader>po :action ManageRecentProjects<Cr>
-nnoremap <Leader>pg :action Vcs.VcsClone<Cr>
-nnoremap <Leader>pc :action CloseProject<Cr>
-nnoremap <Leader>pn :action NewProject<Cr>
-nnoremap <Leader>pj :action NextProjectWindow<Cr>
-nnoremap <Leader>pk :action PreviousProjectWindow<Cr>
-nnoremap <Leader>pw :action OpenProjectWindows<Cr>
+noremap <Leader>po :action ManageRecentProjects<Cr>
+noremap <Leader>pg :action Vcs.VcsClone<Cr>
+noremap <Leader>pc :action CloseProject<Cr>
+noremap <Leader>pn :action NewProject<Cr>
+noremap <Leader>pj :action NextProjectWindow<Cr>
+noremap <Leader>pk :action PreviousProjectWindow<Cr>
+noremap <Leader>pw :action OpenProjectWindows<Cr>
 
 "" Git
-nnoremap <Leader>gl :action Vcs.UpdateProject<Cr>
-nnoremap <Leader>gp :action Vcs.Push<Cr>
-nnoremap <Leader>gg :action CheckinProject<Cr>
-nnoremap <Leader>ga :action Git.Add<Cr>
-nnoremap <Leader>gf :action Git.Fetch<Cr>
-nnoremap <Leader>gm :action Git.Merge<Cr>
-nnoremap <Leader>gbs :action Git.Branches<Cr>
-nnoremap <Leader>gbn :action Git.CreateNewBranch<Cr>
+noremap <Leader>gl :action Vcs.UpdateProject<Cr>
+noremap <Leader>gp :action Vcs.Push<Cr>
+noremap <Leader>gg :action CheckinProject<Cr>
+noremap <Leader>ga :action Git.Add<Cr>
+noremap <Leader>gf :action Git.Fetch<Cr>
+noremap <Leader>gm :action Git.Merge<Cr>
+noremap <Leader>gbs :action Git.Branches<Cr>
+noremap <Leader>gbn :action Git.CreateNewBranch<Cr>
+noremap <Leader>gi :action Vcs.Diff.IncludeChangedLinesIntoCommit<Cr>
 
 "" Actions
-nnoremap <Leader>ar :action Run<Cr>
-nnoremap <Leader>ad :action Debug<Cr>
-nnoremap <Leader>ab :action Rust.Build<Cr>
-nnoremap <Leader>aa :action ChooseRunConfiguration<Cr>
+noremap <Leader>ar :action Run<Cr>
+noremap <Leader>ad :action Debug<Cr>
+noremap <Leader>ab :action Rust.Build<Cr>
+noremap <Leader>aa :action ChooseRunConfiguration<Cr>
 
 "" Vim
-nnoremap <Leader>vv :action VimActions<Cr>
-nnoremap <Leader>vr :action IdeaVim.ReloadVimRc.reload<Cr>
-nnoremap <Leader>vx :action VimPluginToggle<Cr>
+noremap <Leader>vv :action VimActions<Cr>
+noremap <Leader>vr :action IdeaVim.ReloadVimRc.reload<Cr>
+noremap <Leader>vx :action VimPluginToggle<Cr>
 
 "" Windows
-nnoremap <Leader>wt :action ActivateTerminalToolWindow<Cr>
-nnoremap <Leader>wr :action ActivateRunToolWindow<Cr>
-nnoremap <Leader>ww :action HideAllWindows<Cr>
+noremap <Leader>wt :action ActivateTerminalToolWindow<Cr>
+noremap <Leader>wr :action ActivateRunToolWindow<Cr>
+noremap <Leader>ww :action HideAllWindows<Cr>
 
 "" Editor
-nnoremap <leader>/ :action FindInPath<Cr>
-nnoremap <Leader>s /
-nnoremap <Leader>S :action FindInPath<Cr>
-nnoremap <leader><leader> :action CodeCompletion<Cr>
-nnoremap <leader> <Esc>
+noremap <leader>/ :action FindInPath<Cr>
+noremap <Leader>s /
+noremap <Leader>S :action FindInPath<Cr>
+noremap <leader><leader> :action CodeCompletion<Cr>
+noremap <leader> <Esc>
+noremap +y "+y
+noremap +p "+p
+noremap +d "+d
 
 "" Goto
-nnoremap gi :action GotoImplementation<Cr>
-nnoremap gn :action ShowUsages<Cr>
-nnoremap gs :action GotoTest<Cr>
-nnoremap gp :action GotoSuperMethod<Cr>
-nnoremap ge :action GotoNextError<Cr>
-nnoremap gE :action GotoPrevError<Cr>
+noremap gi :action GotoImplementation<Cr>
+noremap gn :action ShowUsages<Cr>
+noremap gs :action GotoTest<Cr>
+noremap gp :action GotoSuperMethod<Cr>
+noremap ge :action GotoNextError<Cr>
+noremap gE :action GotoPrevError<Cr>
 
 """ Languages
 
 "" Rust
-nnoremap <Leader>lrr :action Cargo.RefreshCargoProject<Cr>
+noremap <Leader>lrr :action Cargo.RefreshCargoProject<Cr>
 
 "" Visibility
 " C# show only top level class items with zm
