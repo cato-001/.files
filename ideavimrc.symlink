@@ -84,6 +84,7 @@ noremap <leader>/ :action FindInPath<Cr>
 noremap <Leader>s /
 noremap <Leader>S :action FindInPath<Cr>
 noremap <leader><leader> :action CodeCompletion<Cr>
+noremap <Tab> <Esc>
 noremap <leader> <Esc>
 noremap +y "+y
 noremap +p "+p
@@ -96,6 +97,10 @@ noremap gs :action GotoTest<Cr>
 noremap gp :action GotoSuperMethod<Cr>
 noremap ge :action GotoNextError<Cr>
 noremap gE :action GotoPrevError<Cr>
+noremap gj 16j
+noremap gJ 32j
+noremap gk 16k
+noremap gK 32k
 
 """ Languages
 
