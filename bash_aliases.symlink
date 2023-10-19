@@ -1,6 +1,8 @@
 # Git
 alias gp="git push"
 alias gl="git pull"
+alias gs="git status"
+alias ga="git add --all"
 
 # Ls
 alias la="ls -A"
