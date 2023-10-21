@@ -88,7 +88,9 @@ noremap <Tab> <Esc>
 noremap <leader> <Esc>
 noremap +y "+y
 noremap +p "+p
+noremap +P "+P
 noremap +d "+d
+noremap +c "+y
 
 "" Goto
 noremap gi :action GotoImplementation<Cr>
