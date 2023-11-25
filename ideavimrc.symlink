@@ -90,6 +90,8 @@ noremap +y "+y
 noremap +p "+p
 noremap +d "+d
 
+:command! Qo action CloseAllEditorsButActive
+
 "" Goto
 noremap gi :action GotoImplementation<Cr>
 noremap gn :action ShowUsages<Cr>
