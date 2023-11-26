@@ -38,6 +38,7 @@ noremap <Leader>e :action ShowErrorDescription<Cr>
 
 "" Files
 noremap <Leader>f :action GotoFile<Cr>
+noremap <Leader>s :action GotoClass<Cr>
 noremap <Leader>j :action RecentLocations<Cr>
 
 :command! NewFile action NewFile
@@ -50,6 +51,8 @@ noremap <Leader>j :action RecentLocations<Cr>
 :command! ClosePrj action CloseProject
 
 "" Git
+noremap <Leader>g VcsShowCurrentChangeMarker<Cr>
+
 :command! Gl action Vcs.UpdateProject
 :command! Gp action Vcs.Push
 :command! Gg action CheckinProject
@@ -78,6 +81,7 @@ noremap <Leader>wf :action ActivateProjectToolWindow<Cr>
 noremap <Leader>wt :action ActivateTerminalToolWindow<Cr>
 noremap <Leader>wr :action ActivateRunToolWindow<Cr>
 noremap <Leader>wd :action ActivateDebugToolWindow<Cr>
+noremap <Leader>ws :action ShowSettings<Cr>
 noremap <Leader><Leader> :action HideAllWindows<Cr>
 
 "" Editor
@@ -119,7 +123,11 @@ noremap <Leader>de :action EditBreakpoint<Cr>
 """ Languages
 
 "" Rust
-:command! Rust action Cargo.RefreshCargoProject
+:command! Cgr action Cargo.RefreshCargoProject
+:command! Cgu !cargo update
+
+"" Html
+:command! Ff !firefox %
 
 "" Visibility
 " C# show only top level class items with zm
