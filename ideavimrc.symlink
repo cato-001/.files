@@ -36,6 +36,8 @@ noremap <Leader>e :action ShowErrorDescription<Cr>
 :command! Fmt action ReformatCode
 :command! FmtPrj action Cargo.RustfmtCargoProject
 
+cnoremap fmt Fmt
+
 "" Files
 noremap <Leader>f :action GotoFile<Cr>
 noremap <Leader>s :action GotoClass<Cr>
@@ -51,7 +53,7 @@ noremap <Leader>j :action RecentLocations<Cr>
 :command! ClosePrj action CloseProject
 
 "" Git
-noremap <Leader>g VcsShowCurrentChangeMarker<Cr>
+noremap <Leader>g :VcsShowCurrentChangeMarker<Cr>
 
 :command! Gl action Vcs.UpdateProject
 :command! Gp action Vcs.Push
@@ -59,9 +61,15 @@ noremap <Leader>g VcsShowCurrentChangeMarker<Cr>
 :command! Ga action Git.Add
 :command! Gf action Git.Fetch
 :command! Gm action Git.Merge
-:command! Gbs action Git.Branches
-:command! Gbn action Git.CreateNewBranch
-:command! Gi action Vcs.Diff.IncludeChangedLinesIntoCommit
+:command! Gb action Git.CreateNewBranch
+
+cnoremap gl<Cr> Gl<Cr>
+cnoremap gp<Cr> Gp<Cr>
+cnoremap gg<Cr> Gg<Cr>
+cnoremap ga<Cr> Ga<Cr>
+cnoremap gf<Cr> Gf<Cr>
+cnoremap gm<Cr> Gm<Cr>
+cnoremap gb<Cr> Gb<Cr>
 
 "" Actions
 :command! Run action Run
@@ -85,12 +93,14 @@ noremap <Leader>ws :action ShowSettings<Cr>
 noremap <Leader><Leader> :action HideAllWindows<Cr>
 
 "" Editor
+noremap U <C-R>
 noremap <leader>/ :action FindInPath<Cr>
 
 noremap +y "+y
 noremap +d "+d
 noremap +c "+c
 noremap +r ciw<C-R>+<Esc>
+vnoremap +r c<C-R>+<Esc>
 noremap +R ciW<C-R>+<Esc>
 noremap <Tab>p "+p
 noremap <Tab>P "+P
