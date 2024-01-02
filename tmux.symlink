@@ -1,14 +1,20 @@
+set -g prefix C-j
 unbind C-b
-set-option -g prefix C-j
 bind C-j send-prefix
 
-bind - split-window -h # Split panes horizontal
-bind _ split-window -v # Split panes vertically
+bind - split-window -h
+bind _ split-window -v
 bind j last-pane
 bind C-j last-pane
 
 set -g status-position top
 set -g default-terminal "screen-256color"
+
+set -g visual-activity off
+set -g visual-bell off
+set -g visual-silence off
+setw -g monitor-activity off
+set -g bell-action none
 
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
