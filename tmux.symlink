@@ -13,8 +13,8 @@ set -g default-terminal "screen-256color"
 set -g visual-activity off
 set -g visual-bell off
 set -g visual-silence off
-setw -g monitor-activity off
 set -g bell-action none
+setw -g monitor-activity off
 
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
