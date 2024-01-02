@@ -11,6 +11,7 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 ## General ##
+set bell-style visible
 shopt -s checkwinsize
 shopt -s globstar
 
