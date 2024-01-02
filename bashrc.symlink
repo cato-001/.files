@@ -101,6 +101,7 @@ fi
 set -o vi
 export VISUAL=nvim
 export EDITOR=$VISUAL
+setxkbmap -option caps:escape
 
 paste_from_clipboard () {
   local shift=$1
