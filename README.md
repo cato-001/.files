@@ -3,6 +3,5 @@
 
 A collection of my dotfiles.
 
-This includes:
 
-    .ideavimrc
+.ideavimrc
