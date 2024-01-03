@@ -17,8 +17,11 @@ To setup the symlinks unser run:
 
 ## Included
 
-    // For IdeaVim in all Jetbrains IDEs
-    [.ideavimrc](ideavimrc.symlink)
+### [.ideavimrc](ideavimrc.symlink)
 
-    // For tmux in linux and wsl
-    [.tmux.conf](tmux.symlink)
+For IdeaVim in all Jetbrains IDEs
+
+### [.tmux.conf](tmux.symlink)
+
+For tmux in linux and wsl
+    
