@@ -2,6 +2,8 @@ set -g prefix C-j
 unbind C-b
 bind C-j send-prefix
 
+set -g default-shell /bin/bash
+
 bind - split-window -h
 bind _ split-window -v
 bind j last-pane
