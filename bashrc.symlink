@@ -92,10 +92,12 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-. "$HOME/.cargo/env"
-
 
 ## Custom ##
+
+# Installations paths
+. "$HOME/.cargo/env"
+export PATH=$PATH:/usr/local/go/bin
 
 # VIM #
 set -o vi

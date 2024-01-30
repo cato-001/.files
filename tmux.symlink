@@ -26,3 +26,5 @@ set -g @catppuccin_flavour 'mocha'
 
 run '~/.tmux/plugins/tpm/tpm'
 
+# Set escape time for neovim
+set-option -sg escape-time 10

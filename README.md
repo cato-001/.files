@@ -24,4 +24,9 @@ For IdeaVim in all Jetbrains IDEs
 ### [.tmux.conf](tmux.symlink)
 
 For tmux in linux and wsl
+
+## Requirements
+
+> **NeoVim**
+> fd, ripgrep, go, luarocks, rustup, php, composer
     
