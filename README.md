@@ -1,29 +1,22 @@
 # .files
 
-
 A collection of my dotfiles.
 
 ## Setup
 
-All files that end with `.symlink` get linked to the expected locations for the config files.
+The setup is pretty easy.
+I use gnu stow to setup everything in this directory.
 
-To setup the symlinks unser run:
+Simply `cd` into this directory and run:
 
-    // Linux
-    sh setup.sh
+    stow .
 
-    // Windows
-    ./setup.ps1
+Everything should be symlinked.
+When there are errors:
 
-## Included
-
-### [.ideavimrc](ideavimrc.symlink)
-
-For IdeaVim in all Jetbrains IDEs
-
-### [.tmux.conf](tmux.symlink)
-
-For tmux in linux and wsl
+1. read the error message of stow
+2. note down all files that could not be linked
+3. backup and remove the original file and try again `stow .`
 
 ## Requirements
 
