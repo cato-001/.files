@@ -1,8 +1,11 @@
-vim.opt.scrolloff = 10
-vim.opt.startofline = true
+local options = require 'custom.options'
+options.set_leader()
+options.setup()
 
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+local keymaps = require 'custom.keymaps'
+keymaps.setup()
+keymaps.setup_system_register()
+
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -160,42 +163,10 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {
   checker = { enable = true }
 })
-
--- [[ Vim Options ]]
-
-vim.o.hlsearch = true
-vim.o.mouse = 'a'
-
-vim.o.breakindent = true
-
-vim.o.undofile = true
-
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
-vim.wo.signcolumn = 'yes'
-
-vim.o.updatetime = 200
-vim.o.timeoutlen = 300
-
-vim.o.completeopt = 'menuone,noselect'
-
-vim.o.termguicolors = true
-
-vim.o.number = true
-vim.o.relativenumber = true
-
-vim.o.textwidth = 0
-vim.o.wrapmargin = 0
-vim.o.wrap = false
-
--- [[ Keymaps ]]
-
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- vim.keymap.set('i', '<C-Bs>', '<Esc>diwi', { silent = true })
 
@@ -364,6 +335,11 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
+
+  vim.api.nvim_create_autocmd('BufWritePre', {
+    pattern = { '*.lua' },
+    command = ':Format'
+  })
 end
 
 -- document existing key chains
@@ -399,17 +375,16 @@ local servers = {
     filetypes = { 'rs', 'slint' },
   },
   tsserver = {},
-  bash_language_server = {
-    filetypes = { 'sh' },
-  },
   html = { filetypes = { 'html', 'twig', 'hbs'} },
-
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
     },
   },
+  phpactor = {
+    filetypes = { 'php', 'twig' }
+  }
 }
 
 -- Setup neovim lua configuration
