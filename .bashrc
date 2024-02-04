@@ -3,6 +3,9 @@ case $- in
       *) return;;
 esac
 
+## Update ##
+sh update_dotfiles.sh
+
 ## History ##
 HISTCONTROL=ignoreboth
 shopt -s histappend
