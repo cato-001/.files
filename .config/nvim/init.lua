@@ -214,6 +214,8 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 
+keymaps.setup_open()
+
 -- [[ Treesitter ]]
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
