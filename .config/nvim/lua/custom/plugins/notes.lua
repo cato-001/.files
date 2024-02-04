@@ -1,3 +1,6 @@
+local maps = require 'maps'
+local nvmap = maps.nvmap
+
 return {
   {
     'epwalsh/obsidian.nvim',
@@ -13,16 +16,13 @@ return {
     opts = {
       workspaces = {
         {
-          name = 'personal',
-          path = vim.fn.expand '~' .. '/vaults/personal',
-        },
-        {
-          name = 'work',
-          path = vim.fn.expand '~' .. '/vaults/work',
+          name = 'notes',
+          path = vim.fn.expand '~' .. '/notes',
         }
       }
     },
     init = function()
+      vim.api.nvim_create_user_command('Today', ':ObsidianToday', {})
     end
   }
 }

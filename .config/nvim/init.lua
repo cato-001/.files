@@ -6,6 +6,11 @@ local keymaps = require 'custom.keymaps'
 keymaps.setup()
 keymaps.setup_system_register()
 
+local commands = require 'custom.commands'
+commands.setup_autoformat({
+  '*.lua'
+})
+
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -36,7 +41,10 @@ require('lazy').setup({
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
 
-      { 'j-hui/fidget.nvim', opts = {} },
+      {
+        'j-hui/fidget.nvim',
+        opts = {}
+      },
 
       -- Lua
       'folke/neodev.nvim',
@@ -54,7 +62,10 @@ require('lazy').setup({
     },
   },
 
-  { 'folke/which-key.nvim', opts = {} },
+  {
+    'folke/which-key.nvim',
+    opts = {}
+  },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -94,18 +105,6 @@ require('lazy').setup({
     },
   },
 
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-      require('catppuccin').setup({
-        flavour = 'mocha',
-        transparent_background = true,
-      })
-      vim.cmd.colorscheme 'catppuccin-mocha'
-    end
-  },
 
   {
     'nvim-lualine/lualine.nvim',
@@ -125,7 +124,7 @@ require('lazy').setup({
     opts = {},
   },
 
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',  opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -209,7 +208,6 @@ vim.keymap.set('n', '<leader>/', function()
 end, { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
-vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files, { desc = 'Search [F]iles' })
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').help_tags, { desc = '[?] Search Help' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
@@ -335,11 +333,6 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
-
-  vim.api.nvim_create_autocmd('BufWritePre', {
-    pattern = { '*.lua' },
-    command = ':Format'
-  })
 end
 
 -- document existing key chains
@@ -362,7 +355,7 @@ local servers = {
   -- clangd = {},
   zls = {},
   gopls = {},
-  pyright = {
+  pylyzer = {
     filetypes = { 'py' },
   },
   rust_analyzer = {
@@ -375,7 +368,7 @@ local servers = {
     filetypes = { 'rs', 'slint' },
   },
   tsserver = {},
-  html = { filetypes = { 'html', 'twig', 'hbs'} },
+  html = { filetypes = { 'html', 'twig', 'hbs' } },
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -459,4 +452,3 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
-
