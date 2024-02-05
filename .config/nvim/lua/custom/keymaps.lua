@@ -14,12 +14,26 @@ local function setup_system_register()
 
   nvmap('+p', '"+p', '[P]aste (system register)')
   nvmap('+P', '"+P', '[P]aste (system register)')
+
+  nmap('+r', 'ciw<c-r>+<esc>', '[R]eplace (system register)')
+  nmap('+R', 'ciW<c-r>+<esc>', '[R]eplace (system register)')
 end
 
-local function setup_open()
-  nmap('<leader>f', require('telescope.builtin').find_files, 'Open [F]iles')
+local function setup_search()
+  nmap('<leader>f', require('telescope.builtin').find_files, 'Search [F]iles')
 
-  nmap('<leader>on', ':ObsidianSearch<cr>', '[O]pen [N]otes')
+  nmap('<leader>s:', require('telescope.builtin').command_history, '[S]earch [:] command history')
+  nmap('<leader>sh', require('telescope.builtin').search_history, '[S]earch [H]istory')
+
+  nmap('<leader>s?', require('telescope.builtin').help_tags, '[S]earch [?] help')
+
+  nmap('<leader>gf', require('telescope.builtin').git_files, 'Search [G]it [F]iles')
+  nmap('<leader>sd', require('telescope.builtin').diagnostics, '[S]earch [D]iagnostics')
+  nmap('<leader>sg', require('telescope.builtin').live_grep, '[S]earch by [G]rep')
+  nmap('<leader>sr', require('telescope.builtin').resume, '[S]earch [R]esume')
+  nmap('<leader>sw', require('telescope.builtin').grep_string, '[S]earch current [W]ord')
+
+  nmap('<leader>sn', ':ObsidianSearch<cr>', '[S]earch [N]otes')
 end
 
 local function setup()
@@ -28,6 +42,6 @@ end
 
 return {
   setup = setup,
-  setup_open = setup_open,
+  setup_search = setup_search,
   setup_system_register = setup_system_register
 }
