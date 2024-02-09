@@ -16,12 +16,9 @@ return {
           name = 'notes',
           path = vim.fn.expand '~' .. '/notes',
         }
-      }
-    },
-    daily_notes = {
-      folder = "dailies",
-      date_format = "%Y-%m-%d",
-      alias_format = "%B %-d, %Y",
+      },
+      sort_by = "created",
+      sort_reversed = true,
     },
     init = function()
       vim.api.nvim_create_user_command('Today', ':ObsidianToday', {})

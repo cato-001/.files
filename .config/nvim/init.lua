@@ -208,6 +208,7 @@ vim.keymap.set('n', '<leader>/', function()
 end, { desc = '[/] Fuzzily search in current buffer' })
 
 keymaps.setup_search()
+keymaps.setup_gotos()
 
 -- [[ Treesitter ]]
 vim.defer_fn(function()
@@ -307,6 +308,7 @@ local on_attach = function(_, bufnr)
 
   nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+  nmap('gn', require('telescope.builtin').lsp_references, '[G]oto References')
   nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
   nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
   nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')

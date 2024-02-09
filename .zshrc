@@ -122,3 +122,5 @@ fi
 export PATH="$PATH"
 export PATH="$PATH:$HOME/.krew/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin:$HOME/.local/share/JetBrains/Toolbox/scripts"
 
+alias today="nvim +Today"
+

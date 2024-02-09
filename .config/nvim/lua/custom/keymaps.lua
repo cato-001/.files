@@ -22,6 +22,10 @@ end
 local function setup_search()
   nmap('<leader>f', require('telescope.builtin').find_files, 'Search [F]iles')
 
+  nmap('<leader>n', ':ObsidianSearch<cr>', 'Search [N]otes')
+  nmap('<leader>sa', ':ObsidianSearch #active<cr><esc>', '[S]earch [A]ctive note')
+  nmap('<leader>st', ':ObsidianSearch #todo<cr><esc>', '[S]earch [T]odo note')
+
   nmap('<leader>s:', require('telescope.builtin').command_history, '[S]earch [:] command history')
   nmap('<leader>sh', require('telescope.builtin').search_history, '[S]earch [H]istory')
 
@@ -32,8 +36,9 @@ local function setup_search()
   nmap('<leader>sg', require('telescope.builtin').live_grep, '[S]earch by [G]rep')
   nmap('<leader>sr', require('telescope.builtin').resume, '[S]earch [R]esume')
   nmap('<leader>sw', require('telescope.builtin').grep_string, '[S]earch current [W]ord')
+end
 
-  nmap('<leader>sn', ':ObsidianSearch<cr>', '[S]earch [N]otes')
+local function setup_gotos()
 end
 
 local function setup()
@@ -43,5 +48,6 @@ end
 return {
   setup = setup,
   setup_search = setup_search,
+  setup_gotos = setup_gotos,
   setup_system_register = setup_system_register
 }
