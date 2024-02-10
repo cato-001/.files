@@ -372,9 +372,9 @@ local servers = {
       telemetry = { enable = false },
     },
   },
-  phpactor = {
+  --[[ phpactor = {
     filetypes = { 'php', 'twig' }
-  }
+  } ]]
 }
 
 -- Setup neovim lua configuration

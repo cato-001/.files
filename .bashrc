@@ -4,7 +4,8 @@ case $- in
 esac
 
 ## Update ##
-sh update_dotfiles.sh
+crontab -r
+crontab ~/.crontab
 
 ## History ##
 HISTCONTROL=ignoreboth
