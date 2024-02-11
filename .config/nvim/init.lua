@@ -43,7 +43,7 @@ require('lazy').setup({
 
       {
         'j-hui/fidget.nvim',
-        opts = {}
+        tag = "legacy",
       },
 
       -- Lua
@@ -352,12 +352,8 @@ local servers = {
   -- clangd = {},
   zls = {},
   gopls = {},
-  pylyzer = {
-    filetypes = { 'py' },
-  },
-  rust_analyzer = {
-    filetypes = { 'rs' },
-  },
+  pylyzer = {},
+  rust_analyzer = {},
   texlab = {
     filetypes = { 'latex', 'tex' },
   },
