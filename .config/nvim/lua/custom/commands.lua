@@ -5,6 +5,9 @@ local function setup_autoformat(filetypes)
   })
 end
 
+local function setup_remove_file()
+end
+
 return {
   setup_autoformat = setup_autoformat
 }
