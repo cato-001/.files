@@ -25,5 +25,8 @@ return {
       vim.api.nvim_create_user_command('Yesterday', ':ObsidianYesterday', {})
       vim.api.nvim_create_user_command('Tomorrow', ':ObsidianTomorrow', {})
     end
+  },
+  {
+    'lukas412/scatternotes.nvim'
   }
 }
