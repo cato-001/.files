@@ -19,6 +19,12 @@ return {
       },
       sort_by = "created",
       sort_reversed = true,
+      picker = {
+        mappings = {
+          new = '<C-n>',
+          insert_link = '<C-p>'
+        }
+      },
     },
     init = function()
       vim.api.nvim_create_user_command('Today', ':ObsidianToday', {})
