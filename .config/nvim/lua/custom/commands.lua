@@ -5,9 +5,10 @@ local function setup_autoformat(filetypes)
   })
 end
 
-local function setup_remove_file()
+local function setup_notes()
 end
 
 return {
-  setup_autoformat = setup_autoformat
+  setup_autoformat = setup_autoformat,
+  setup_note = setup_notes
 }
