@@ -22,4 +22,4 @@ When there are errors:
 
 > **NeoVim**
 > fd, ripgrep, go, luarocks, rustup, php, composer
-    
+

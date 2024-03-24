@@ -6,5 +6,5 @@ local function setup_autoformat(filetypes)
 end
 
 return {
-  setup_autoformat = setup_autoformat
+  setup_autoformat = setup_autoformat,
 }
