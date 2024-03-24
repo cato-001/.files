@@ -8,7 +8,9 @@ keymaps.setup_system_register()
 
 local commands = require 'custom.commands'
 commands.setup_autoformat({
-  '*.lua'
+  '*.lua',
+  '*.rs',
+  '*.py'
 })
 
 
@@ -43,7 +45,8 @@ require('lazy').setup({
 
       {
         'j-hui/fidget.nvim',
-        tag = "legacy",
+        opts = {},
+        tag = "lagacy",
       },
 
       -- Lua

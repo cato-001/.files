@@ -1,11 +1,8 @@
 local function setup_autoformat(filetypes)
   vim.api.nvim_create_autocmd('BufWritePre', {
     pattern = filetypes,
-    command = ':Format'
+    callback = function() vim.lsp.buf.format() end
   })
-end
-
-local function setup_remove_file()
 end
 
 return {
