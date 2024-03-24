@@ -29,6 +29,9 @@ local function setup()
   vim.o.wrap = false
 
   vim.o.conceallevel = 1
+
+  vim.opt.tabstop = 4
+  vim.opt.shiftwidth = 4
 end
 
 local function set_leader()

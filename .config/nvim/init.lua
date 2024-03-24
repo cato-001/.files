@@ -47,7 +47,6 @@ require('lazy').setup({
       {
         'j-hui/fidget.nvim',
         opts = {},
-        tag = "lagacy",
       },
 
       -- Lua
