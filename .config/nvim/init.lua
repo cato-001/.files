@@ -10,7 +10,8 @@ local commands = require 'custom.commands'
 commands.setup_autoformat({
   '*.lua',
   '*.rs',
-  '*.py'
+  '*.py',
+  '*.go'
 })
 -- commands.setup_note()
 
