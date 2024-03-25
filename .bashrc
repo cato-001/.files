@@ -101,7 +101,7 @@ fi
 
 # Installations paths
 . "$HOME/.cargo/env"
-export PATH="$PATH:/usr/local/go/bin:$HOME/.local/lib/node/bin"
+export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/lib/node/bin"
 
 # VIM #
 set -o vi

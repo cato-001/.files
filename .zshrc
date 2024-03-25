@@ -111,14 +111,19 @@ if ! grep -Fxqs $CURRENT_UPTIME /var/run/uptime-on-last-startup-script-run
 then
   /mnt/c/Windows/system32/wsl.exe -d ${WSL_DISTRO_NAME} -u root /usr/local/bin/startup
 fi
-export PATH="$PATH"
-export PATH="$PATH:$HOME/.krew/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin:$HOME/.local/share/JetBrains/Toolbox/scripts"
 
-alias fb="featurebranches"
+export PATH="$PATH:/snap/bin"
+export PATH="$PATH:$HOME/.krew/bin:/usr/local/go/bin"
+export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
+
 alias v="nvim"
 alias vim="nvim"
 alias today="nvim +Today"
 alias py="python3"
+
+alias fb="featurebranches"
 
 alias -s txt=nvim
 alias -s py=nvim

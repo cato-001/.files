@@ -9,8 +9,12 @@ keymaps.setup_editor_defaults()
 
 local commands = require 'custom.commands'
 commands.setup_autoformat({
-  '*.lua'
+  '*.lua',
+  '*.rs',
+  '*.py',
+  '*.go'
 })
+-- commands.setup_note()
 
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -44,7 +48,7 @@ require('lazy').setup({
 
       {
         'j-hui/fidget.nvim',
-        tag = "legacy",
+        opts = {},
       },
 
       -- Lua
@@ -214,7 +218,8 @@ keymaps.setup_gotos()
 -- [[ Treesitter ]]
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'zig' },
+    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim',
+      'bash', 'zig' },
     sync_install = true,
 
     ignore_install = {},
