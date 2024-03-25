@@ -5,6 +5,7 @@ options.setup()
 local keymaps = require 'custom.keymaps'
 keymaps.setup()
 keymaps.setup_system_register()
+keymaps.setup_editor_defaults()
 
 local commands = require 'custom.commands'
 commands.setup_autoformat({

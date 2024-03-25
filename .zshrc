@@ -68,8 +68,6 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
   autojump
   docker-compose
@@ -82,8 +80,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -104,10 +100,6 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 export DISPLAY=host.docker.internal:0.0 #GWSL
 export PULSE_SERVER=tcp:host.docker.internal #GWSL
 export LIBGL_ALWAYS_INDIRECT=1 #GWSL
@@ -122,5 +114,20 @@ fi
 export PATH="$PATH"
 export PATH="$PATH:$HOME/.krew/bin:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin:$HOME/.local/share/JetBrains/Toolbox/scripts"
 
+alias fb="featurebranches"
+alias v="nvim"
+alias vim="nvim"
 alias today="nvim +Today"
+alias py="python3"
+
+alias -s txt=nvim
+alias -s py=nvim
+alias -s go=nvim
+alias -s json=nvim
+alias -s xml=nvim
+alias -s php=PhpStorm
+
+fb-dns() {
+  fb dns-status | rg mongodb42 | rg $1
+}
 

@@ -41,6 +41,10 @@ end
 local function setup_gotos()
 end
 
+local function setup_editor_defaults()
+  nmap('U', '<C-R>', 'Redo')
+end
+
 local function setup()
   vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 end
@@ -49,5 +53,6 @@ return {
   setup = setup,
   setup_search = setup_search,
   setup_gotos = setup_gotos,
-  setup_system_register = setup_system_register
+  setup_system_register = setup_system_register,
+  setup_editor_defaults = setup_editor_defaults,
 }
