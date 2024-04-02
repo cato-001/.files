@@ -100,9 +100,9 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-export DISPLAY=host.docker.internal:0.0 #GWSL
-export PULSE_SERVER=tcp:host.docker.internal #GWSL
-export LIBGL_ALWAYS_INDIRECT=1 #GWSL
+# export DISPLAY=host.docker.internal:0.0 #GWSL
+# export PULSE_SERVER=tcp:host.docker.internal #GWSL
+# export LIBGL_ALWAYS_INDIRECT=1 #GWSL
 export LD_LIBRARY_PATH=/usr/local/lib
 
 CURRENT_UPTIME="$(uptime -s)"

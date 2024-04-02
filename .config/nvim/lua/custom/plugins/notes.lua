@@ -25,26 +25,28 @@ return {
           insert_link = '<C-p>'
         }
       },
+      disable_frontmatter = true,
     },
-    init = function()
-      vim.api.nvim_create_user_command('Today', 'ObsidianToday', {})
-      vim.api.nvim_create_user_command('Yesterday', 'ObsidianYesterday', {})
-      vim.api.nvim_create_user_command('Tomorrow', 'ObsidianTomorrow', {})
-    end
   },
   {
     'lukas412/scatternotes.nvim',
     lazy = false,
     init = function()
-      print('init')
+      local scatternotes = require('scatternotes')
       vim.api.nvim_create_user_command('Work', function()
-        require('scatternotes').create_note({ work = true, date = true, time = true })
+        scatternotes.create_note({ work = true, date = true, time = true })
       end, {})
       vim.api.nvim_create_user_command('Personal', function()
-        require('scatternotes').create_note({ personal = true, date = true, time = true })
+        scatternotes.create_note({ personal = true, date = true, time = true })
       end, {})
       vim.api.nvim_create_user_command('Daily', function()
-        require('scatternotes').create_note({ daily = true })
+        scatternotes.create_note({ daily = true })
+      end, {})
+      vim.api.nvim_create_user_command('Meeting', function()
+        scatternotes.create_note({ work = true, meeting = true })
+      end, {})
+      vim.api.nvim_create_user_command('Ticket', function()
+        scatternotes.create_note({ work = true, date = true, time = true, 'ticket' })
       end, {})
     end,
     dev = { true }
