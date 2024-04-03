@@ -1,0 +1,42 @@
+#!/bin/bash
+
+wifi_connections="$(
+	nmcli connection show |
+	sed 1d |
+	rg 'wifi' |
+	rg '\-\-' |
+	rg -o '^\S+(\s\S+)*\s+?\S+')
+exit"
+
+if [ $# -eq 0 ]
+then 
+	choice=$(echo "$wifi_connections" | fzf)
+else
+	choice=$(echo "$wifi_connections" | rg -i $1)
+fi
+
+if [ -z "$choice" ]
+then
+	exit 1
+fi
+
+if [ "$choice" = "exit" ]
+then
+	exit 0
+fi
+
+name=$(echo $choice | rg -o '^\S+')
+uuid=$(echo $choice | rg -o '\S+$')
+echo "INFO \"Selected $name ($uuid)\""
+
+is_device_up=$(nmcli device status | rg 'wifi' | rg '\-\-' | rg -o '^\S+(\s\S+)*')
+if [ -n "$is_device_up" ]
+then
+	echo "INFO \"Enabling wifi ...\""
+	nmcli radio wifi on
+	sleep 2
+fi
+
+echo "INFO \"Connecting to $name ($uuid) ...\""
+nmcli connection up $uuid
+
