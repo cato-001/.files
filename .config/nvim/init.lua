@@ -66,6 +66,11 @@ require('lazy').setup({
       'rafamadriz/friendly-snippets',
     },
   },
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+  },
 
   {
     'folke/which-key.nvim',
