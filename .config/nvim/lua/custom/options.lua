@@ -1,37 +1,39 @@
 local function setup()
-  vim.o.scrolloff = 10
-  vim.o.startofline = true
+  vim.opt.scrolloff = 10
+  vim.opt.startofline = true
 
-  vim.o.hlsearch = true
-  vim.o.mouse = 'a'
+  vim.opt.hlsearch = true
+  vim.opt.mouse = 'a'
 
-  vim.o.breakindent = true
+  vim.opt.breakindent = true
 
-  vim.o.undofile = true
+  vim.opt.undofile = true
 
-  vim.o.ignorecase = true
-  vim.o.smartcase = true
+  vim.opt.ignorecase = true
+  vim.opt.smartcase = true
 
   vim.wo.signcolumn = 'yes'
 
-  vim.o.updatetime = 200
-  vim.o.timeoutlen = 300
+  vim.opt.updatetime = 200
+  vim.opt.timeoutlen = 300
 
-  vim.o.completeopt = 'menuone,noselect'
+  vim.opt.completeopt = 'menuone,noselect'
 
-  vim.o.termguicolors = true
+  vim.opt.termguicolors = true
 
-  vim.o.number = true
-  vim.o.relativenumber = true
+  vim.opt.number = true
+  vim.opt.relativenumber = true
 
-  vim.o.textwidth = 0
-  vim.o.wrapmargin = 0
-  vim.o.wrap = false
+  vim.opt.textwidth = 0
+  vim.opt.wrapmargin = 0
+  vim.opt.wrap = false
 
-  vim.o.conceallevel = 1
+  vim.opt.conceallevel = 1
 
   vim.opt.tabstop = 4
   vim.opt.shiftwidth = 4
+
+  vim.opt.swapfile = false
 end
 
 local function set_leader()
