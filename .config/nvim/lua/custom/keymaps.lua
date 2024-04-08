@@ -22,7 +22,9 @@ end
 local function setup_search()
   nmap('<leader>f', require('telescope.builtin').find_files, 'Search [F]iles')
 
-  nmap('<leader>n', ':ObsidianSearch<cr>', 'Search [N]otes')
+  nmap('<leader>sn', function()
+    require('scatternotes').search_note()
+  end, 'Search [N]otes')
   nmap('<leader>sa', ':ObsidianSearch #active<cr><esc>', '[S]earch [A]ctive note')
   nmap('<leader>st', ':ObsidianSearch #todo<cr><esc>', '[S]earch [T]odo note')
 
