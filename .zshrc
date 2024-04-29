@@ -72,13 +72,17 @@ export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 
+# Dev-Environment
 alias v="nvim"
 alias vim="nvim"
 alias today="nvim +Today"
 alias py="python3"
 
+alias sn="scatternotes"
+
 alias fb="featurebranches"
 
+# File-Endings
 alias -s txt=nvim
 alias -s py=nvim
 alias -s go=nvim
@@ -86,7 +90,16 @@ alias -s json=nvim
 alias -s xml=nvim
 alias -s php=PhpStorm
 
+# Little scripts
 fb-dns() {
-  fb dns-status | rg mongodb42 | rg $1
+  fb dns-status | rg mongodb42 | rg $1 | xargs -i echo "{}"
+}
+
+fb-st() {
+  fb status | rg "$1|Host|\+|\| Featurebranch" | xargs -i echo "{}"
+}
+
+n() {
+  scatternotes search $1 | xargs nvim
 }
 
