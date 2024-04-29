@@ -34,13 +34,13 @@ When there are errors:
 ## Requirements
 
 > **Fd-Find**
-> ```
+> ```bash
 > sudo apt install fd-find
 > ```
 > [Github >>](https://github.com/sharkdp/fd)
 
 > **RipGrep**
-> ```
+> ```bash
 > sudo apt install ripgrep
 > ```
 > [Github >>](https://github.com/BurntSushi/ripgrep)
@@ -66,8 +66,26 @@ When there are errors:
 > [Website >>](https://getcomposer.org/download/)
 
 > **Zsh Vi Mode**
-> ```
+> ```bash
 > git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
 > ```
 > [Github >>](https://github.com/jeffreytse/zsh-vi-mode)
+
+> **Bat**
+> ```bash
+> cargo install bat --locked
+> ```
+> [Github >>](https://github.com/sharkdp/bat?tab=readme-ov-file#installation)
+
+> **Zoxide**
+> ```bash
+> cargo install zoxide --locked
+> ```
+> [Github >>](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation)
+
+> **Eza**
+> ```bash
+> cargo install eza --locked
+> ```
+> [Github >>](https://github.com/eza-community/eza)
 

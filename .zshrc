@@ -1,12 +1,13 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# setup theme
 ZSH_THEME="robbyrussell"
 
-# Uncomment the following line to use case-sensitive completion.
+# setup sensitive autocompletion
+HYPHEN_INSENSITIVE="true"
 # CASE_SENSITIVE="true"
 
-HYPHEN_INSENSITIVE="true"
+COMPLETION_WAITING_DOTS="%F{purple}waiting...%f"
 
 zstyle ':omz:update' mode auto
 zstyle ':omz:update' frequency 1
@@ -14,7 +15,6 @@ zstyle ':omz:update' frequency 1
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
 
-COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -22,9 +22,7 @@ COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(
-  autojump
   docker-compose
-  common-aliases
   direnv
   git
   npm
@@ -54,7 +52,8 @@ fi
 CURRENT_UPTIME="$(uptime -s)"
 
 # Test for WSL
-if [[ -d /mnt/c/Windows ]]; then
+if [[ -d .work.env.mark ]]
+then
   if ! grep -Fxqs $CURRENT_UPTIME /var/run/uptime-on-last-startup-script-run
   then
     /mnt/c/Windows/system32/wsl.exe -d ${WSL_DISTRO_NAME} -u root /usr/local/bin/startup
@@ -72,25 +71,23 @@ export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 
-# Dev-Environment
-alias v="nvim"
+# setup nvim
+alias v="nvim-open"
 alias vim="nvim"
-alias today="nvim +Today"
-alias py="python3"
 
+# setup scatternotes
 alias sn="scatternotes"
 
+n() {
+  scatternotes search $1 | xargs nvim
+}
+
+# setup python
+alias py="python3"
+
+# setup traveltrex
 alias fb="featurebranches"
 
-# File-Endings
-alias -s txt=nvim
-alias -s py=nvim
-alias -s go=nvim
-alias -s json=nvim
-alias -s xml=nvim
-alias -s php=PhpStorm
-
-# Little scripts
 fb-dns() {
   fb dns-status | rg mongodb42 | rg $1 | xargs -i echo "{}"
 }
@@ -99,7 +96,26 @@ fb-st() {
   fb status | rg "$1|Host|\+|\| Featurebranch" | xargs -i echo "{}"
 }
 
-n() {
-  scatternotes search $1 | xargs nvim
-}
+# setup file aliases
+alias -s txt=nvim
+alias -s py=nvim
+alias -s go=nvim
+alias -s json=nvim
+alias -s xml=nvim
+alias -s php=PhpStorm
+
+# setup zoxide
+eval "$(zoxide init zsh)"
+alias j="z"
+
+# setup eza
+alias ls="eza"
+alias ll="eza -l"
+alias la="eza -la"
+
+# setup fd-find
+alias lf="fd . -t f"
+
+# setup bat
+alias cat="bat"
 
