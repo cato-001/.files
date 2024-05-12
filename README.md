@@ -45,6 +45,12 @@ When there are errors:
 > ```
 > [Github >>](https://github.com/BurntSushi/ripgrep)
 
+> **FZF**
+> ```bash
+> sudo apt install fzf
+> ```
+> [Github >>](https://github.com/junegunn/fzf)
+
 > **Go-Lang**
 > 
 > [Website >>](https://go.dev/dl/)
