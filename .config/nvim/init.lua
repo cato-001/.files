@@ -69,7 +69,12 @@ require('lazy').setup({
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
-    config = true
+    config = true,
+    init = function()
+      local autopairs = require('nvim-autopairs');
+      local Rule = require('nvim-autopairs.rule');
+      autopairs.add_rule(Rule('<', '>'))
+    end
   },
 
   {
@@ -364,7 +369,27 @@ local servers = {
   zls = {},
   gopls = {},
   pylyzer = {},
-  rust_analyzer = {},
+  rust_analyzer = {
+    settings = {
+      ["rust-analyzer"] = {
+        imports = {
+          granularity = {
+            group = "module",
+          },
+          prefix = "self",
+        },
+        cargo = {
+          features = "all",
+          buildScripts = {
+            enable = true,
+          },
+        },
+        procMacro = {
+          enable = true,
+        },
+      }
+    }
+  },
   texlab = {
     filetypes = { 'latex', 'tex' },
   },
@@ -403,7 +428,7 @@ mason_lspconfig.setup_handlers {
     require('lspconfig')[server_name].setup {
       capabilities = capabilities,
       on_attach = on_attach,
-      settings = servers[server_name],
+      settings = (servers[server_name] or {}).settings,
       filetypes = (servers[server_name] or {}).filetypes,
     }
   end,

@@ -89,3 +89,10 @@ When there are errors:
 > ```
 > [Github >>](https://github.com/eza-community/eza)
 
+> **Zellij**
+> ```bash
+> cargo install --locked zellij
+> ```
+> [Github >>](https://github.com/zellij-org/zellij)
+> [Documentation >>](https://zellij.dev/documentation/introduction)
+
