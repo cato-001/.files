@@ -131,24 +131,31 @@ disabled = true
 disabled = false
 style = "green"
 
-modified = "~${count} "
-staged = "+${count} "
-deleted = "-${count} "
-renamed = "*${count} "
-stashed = "\\$${count} "
-untracked = "?${count} "
+modified = "~${count}"
+staged = "+${count}"
+deleted = "-${count}"
+renamed = "*${count}"
+stashed = "\\$${count}"
+untracked = "?${count}"
 ahead = '+${count}'
 diverged = '+${ahead_count}-${behind_count}'
 behind = '-${count}'
 
 format = """
 (\
+gst\\(\
 [$modified](blue)\
 [$staged](green)\
 [$deleted](red)\
 [$renamed](blue)\
 [$stashed](purple)\
 [$untracked](bright-red)\
+\\) \
 )\
 ({[$ahead_behind](purple)} )\
 """
+
+[gcloud]
+format = "gloud\\([$account(@$domain)]($style)\\) "
+style = "cyan"
+disabled = false

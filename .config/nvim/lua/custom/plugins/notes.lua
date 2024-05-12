@@ -60,6 +60,11 @@ return {
       vim.api.nvim_create_user_command('Howto', function()
         require('scatternotes').create_note({ howto = true })
       end, {})
+
+      vim.api.nvim_create_user_command('NotesCommit', function()
+        vim.fn.system('scatternotes commit')
+        print('notes committed successfully')
+      end, {})
     end,
     dev = { true }
   }
