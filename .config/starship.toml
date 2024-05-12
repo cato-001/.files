@@ -110,6 +110,7 @@ disabled = true
 [cmd_duration]
 format = "[$duration]($style) "
 min_time = 0
+style = "yellow"
 
 [rust]
 format = "rust\\([$version]($style)\\) "
