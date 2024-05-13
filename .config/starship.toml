@@ -124,6 +124,11 @@ style = "mauve"
 format = "node(\\([$version]($style)\\)) "
 style = "mauve"
 
+[gcloud]
+format = "gloud\\([$account(@$domain)]($style)\\) "
+style = "cyan"
+disabled = false
+
 [git_branch]
 format = "git\\([$branch(:$remote_branch)]($style)\\) "
 style = "mauve"

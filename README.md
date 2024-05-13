@@ -102,3 +102,8 @@ When there are errors:
 > [Github >>](https://github.com/zellij-org/zellij)
 > [Documentation >>](https://zellij.dev/documentation/introduction)
 
+> **Starship**
+> ```bash
+> cargo install --locked starship
+> ```
+> [Github >>](https://github.com/starship/starship)
