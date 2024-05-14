@@ -120,6 +120,9 @@ style = "cyan"
 format = "node(\\([$version]($style)\\)) "
 style = "cyan"
 
+[php]
+format = "php(\\([$version]($style)\\)) "
+
 [git_branch]
 format = "git\\([$branch(:$remote_branch)](cyan)\\) "
 

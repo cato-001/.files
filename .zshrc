@@ -47,7 +47,7 @@ fi
 CURRENT_UPTIME="$(uptime -s)"
 
 # Test for WSL
-if [[ -d .work.env.mark ]]
+if [[ -f .wsl ]]
 then
   if ! grep -Fxqs $CURRENT_UPTIME /var/run/uptime-on-last-startup-script-run
   then
