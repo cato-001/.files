@@ -125,12 +125,13 @@ format = "node(\\([$version]($style)\\)) "
 style = "mauve"
 
 [gcloud]
-format = "gloud\\([$account(@$domain)]($style)\\) "
-style = "cyan"
+format = "gcloud\\([$account(@$domain)]($style)\\) "
+style = "mauve"
 disabled = false
 
 [php]
 format = "php(\\([$version]($style)\\)) "
+style = "mauve"
 
 [git_branch]
 format = "git\\([$branch(:$remote_branch)]($style)\\) "
