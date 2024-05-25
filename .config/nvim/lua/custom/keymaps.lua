@@ -1,6 +1,7 @@
 local maps = require 'maps'
 local nvmap = maps.nvmap
 local nmap = maps.nmap
+local imap = maps.imap
 
 local function setup_system_register()
   nvmap('+c', '"+c', '[C]ut (system register)')
@@ -44,6 +45,9 @@ end
 local function setup_editor_defaults()
   nmap('U', '<C-R>', 'Redo')
   nmap('V', 'V_', 'Goto start in Visual-Line Mode')
+
+  imap('<C-Z>', '<C-V>', 'use <CTRL-Z> to insert special characters', { noremap = true })
+  imap('', '<Esc>ciw', '<CTRL-BS> to delete the current word', { noremap = true })
 end
 
 local function setup()
