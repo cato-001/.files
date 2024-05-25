@@ -14,10 +14,11 @@ commands.setup_autoformat({
   '*.py',
   '*.go'
 })
--- commands.setup_note()
 
-
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+local lazypath = vim.fn.stdpath('data' .. '/lazy/lazy.nvim')
+if lazypath == nil then
+  return
+end
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
     'git',
@@ -46,10 +47,7 @@ require('lazy').setup({
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
 
-      {
-        'j-hui/fidget.nvim',
-        opts = {},
-      },
+      'j-hui/fidget.nvim',
 
       -- Lua
       'folke/neodev.nvim',

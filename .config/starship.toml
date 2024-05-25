@@ -124,6 +124,14 @@ style = "mauve"
 format = "node(\\([$version]($style)\\)) "
 style = "mauve"
 
+[lua]
+format = "lua\\([$version]($style)\\) "
+style = "mauve"
+
+[zig]
+format = "zig\\([$version]($style)\\) "
+style = "mauve"
+
 [gcloud]
 format = "gloud\\([$account(@$domain)]($style)\\) "
 style = "cyan"

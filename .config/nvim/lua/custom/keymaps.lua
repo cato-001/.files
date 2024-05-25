@@ -22,22 +22,20 @@ end
 local function setup_search()
   nmap('<leader>f', require('telescope.builtin').find_files, 'Search [F]iles')
 
-  nmap('<leader>sn', function()
-    require('scatternotes').search_note()
-  end, 'Search [N]otes')
   nmap('<leader>sa', ':ObsidianSearch #active<cr><esc>', '[S]earch [A]ctive note')
   nmap('<leader>st', ':ObsidianSearch #todo<cr><esc>', '[S]earch [T]odo note')
 
-  nmap('<leader>s:', require('telescope.builtin').command_history, '[S]earch [:] command history')
-  nmap('<leader>sh', require('telescope.builtin').search_history, '[S]earch [H]istory')
+  local telescope_builtin = require('telescope.builtin')
+  nmap('<leader>s:', telescope_builtin.command_history, '[S]earch [:] command history')
+  nmap('<leader>sh', telescope_builtin.search_history, '[S]earch [H]istory')
 
-  nmap('<leader>s?', require('telescope.builtin').help_tags, '[S]earch [?] help')
+  nmap('<leader>s?', telescope_builtin.help_tags, '[S]earch [?] help')
 
-  nmap('<leader>gf', require('telescope.builtin').git_files, 'Search [G]it [F]iles')
-  nmap('<leader>sd', require('telescope.builtin').diagnostics, '[S]earch [D]iagnostics')
-  nmap('<leader>sg', require('telescope.builtin').live_grep, '[S]earch by [G]rep')
-  nmap('<leader>sr', require('telescope.builtin').resume, '[S]earch [R]esume')
-  nmap('<leader>sw', require('telescope.builtin').grep_string, '[S]earch current [W]ord')
+  nmap('<leader>gf', telescope_builtin.git_files, 'Search [G]it [F]iles')
+  nmap('<leader>sd', telescope_builtin.diagnostics, '[S]earch [D]iagnostics')
+  nmap('<leader>sg', telescope_builtin.live_grep, '[S]earch by [G]rep')
+  nmap('<leader>sr', telescope_builtin.resume, '[S]earch [R]esume')
+  nmap('<leader>sw', telescope_builtin.grep_string, '[S]earch current [W]ord')
 end
 
 local function setup_gotos()
@@ -45,10 +43,11 @@ end
 
 local function setup_editor_defaults()
   nmap('U', '<C-R>', 'Redo')
+  nmap('V', 'V_', 'Goto start in Visual-Line Mode')
 end
 
 local function setup()
-  vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+  nvmap('<Space>', '<Nop>', 'prevent space from doing anything', { silent = true })
 end
 
 return {
