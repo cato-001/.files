@@ -14,10 +14,8 @@ commands.setup_autoformat({
   '*.py',
   '*.go'
 })
--- commands.setup_note()
 
-
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
     'git',
@@ -46,10 +44,7 @@ require('lazy').setup({
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
 
-      {
-        'j-hui/fidget.nvim',
-        opts = {},
-      },
+      'j-hui/fidget.nvim',
 
       -- Lua
       'folke/neodev.nvim',
@@ -77,10 +72,6 @@ require('lazy').setup({
     end
   },
 
-  {
-    'folke/which-key.nvim',
-    opts = {}
-  },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -120,25 +111,6 @@ require('lazy').setup({
     },
   },
 
-
-  {
-    'nvim-lualine/lualine.nvim',
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'catppuccin-mocha',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
-
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    main = 'ibl',
-    opts = {},
-  },
-
   { 'numToStr/Comment.nvim',  opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
@@ -165,24 +137,11 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
-  -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
-  --       These are some example plugins that I've included in the kickstart repository.
-  --       Uncomment any of the lines below to enable them.
-  -- require 'kickstart.plugins.autoformat',
-  -- require 'kickstart.plugins.debug',
-
-  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
-  --    up-to-date with whatever is in the kickstart repo.
-  --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  --
-  --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   { import = 'custom.plugins' },
 }, {
   checker = { enable = true }
 })
 
--- vim.keymap.set('i', '<C-Bs>', '<Esc>diwi', { silent = true })
 
 -- [[ Highlight on yank ]]
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })

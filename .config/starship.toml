@@ -3,6 +3,7 @@
 palette = "catppuccin_mocha"
 add_newline = true
 format = """
+$custom\
 $cmd_duration\
 $username\
 $hostname\
@@ -80,7 +81,6 @@ $azure\
 $direnv\
 $env_var\
 $crystal\
-$custom\
 $sudo\
 $line_break\
 $jobs\
@@ -122,6 +122,14 @@ style = "mauve"
 
 [nodejs]
 format = "node(\\([$version]($style)\\)) "
+style = "mauve"
+
+[lua]
+format = "lua\\([$version]($style)\\) "
+style = "mauve"
+
+[zig]
+format = "zig\\([$version]($style)\\) "
 style = "mauve"
 
 [gcloud]
@@ -166,6 +174,11 @@ format = """
 )\
 ({[$ahead_behind](mauve)} )\
 """
+
+[custom.ttrace]
+format = "$output\n\n"
+command = "ttrace --interactive get | xargs echo"
+when = "ttrace is_active"
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"

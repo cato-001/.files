@@ -37,6 +37,9 @@ return {
       callback = function(args)
         local client_id = args.data.client_id
         local client = vim.lsp.get_client_by_id(client_id)
+        if client == nil then
+          return
+        end
         local bufnr = args.buf
 
         -- Only attach to clients that support document formatting
