@@ -14,6 +14,10 @@ alias cini="cargo init"
 alias v="nvim-open"
 alias vim="nvim"
 
+whichv() {
+  which $1 | xargs nvim
+}
+
 # setup scatternotes
 alias sn="scatternotes"
 
