@@ -36,7 +36,7 @@ tw() {
 alias ts="ttrace start"
 alias tp="ttrace stop"
 alias trn="ttrace rename"
-lias trs="ttrace restart"
+alias trs="ttrace restart"
 
 # setup scatternotes
 alias sn="scatternotes"
