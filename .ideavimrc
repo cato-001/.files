@@ -27,7 +27,7 @@ noremap <Leader> <Nop>
 
 "" Code
 noremap <Leader>a :action ShowIntentionActions<Cr>
-noremap <Leader>r :action RenameElement<Cr>
+noremap <Leader>r :action RenameElement<Cr><Esc>
 noremap <Leader>p :action ParameterInfo<Cr>
 noremap <Leader>k :action QuickJavaDoc<Cr>
 noremap <Leader>K :action QuickTypeDefinition<Cr>
@@ -36,78 +36,118 @@ noremap <Leader>e :action ShowErrorDescription<Cr>
 :command! Fmt action ReformatCode
 :command! FmtPrj action Cargo.RustfmtCargoProject
 
-cnoremap fmt Fmt
+"" Bookmarks
+
+:command! B action ToggleBookmark
 
 "" Files
 noremap <Leader>f :action GotoFile<Cr>
-noremap <Leader>s :action GotoClass<Cr>
 noremap <Leader>j :action RecentLocations<Cr>
 
 :command! NewFile action NewFile
 :command! NewDir action NewDir
 
 "" Projects
-:command! NewPrj action NewProject
-:command! OpenPrj action ManageRecentProjects
-:command! ClonePrj action Vcs.VcsClone
-:command! ClosePrj action CloseProject
+:command! Np action NewProject
+:command! Op action ManageRecentProjects
+:command! Qp action CloseProject
 
 "" Git
-noremap <Leader>g :VcsShowCurrentChangeMarker<Cr>
+noremap <Leader>g :action VcsShowCurrentChangeMarker<Cr>
+noremap <Leader>s :action Git.Branches<Cr>
 
+:command! G action CheckinProject
 :command! Gl action Vcs.UpdateProject
 :command! Gp action Vcs.Push
-:command! Gg action CheckinProject
 :command! Ga action Git.Add
 :command! Gf action Git.Fetch
 :command! Gm action Git.Merge
-:command! Gb action Git.CreateNewBranch
-
-cnoremap gl<Cr> Gl<Cr>
-cnoremap gp<Cr> Gp<Cr>
-cnoremap gg<Cr> Gg<Cr>
-cnoremap ga<Cr> Ga<Cr>
-cnoremap gf<Cr> Gf<Cr>
-cnoremap gm<Cr> Gm<Cr>
-cnoremap gb<Cr> Gb<Cr>
+:command! Gs action Git.Branches
+:command! Gn action Git.CreateNewBranch
+:command! Gi action Vcs.Diff.IncludeChangedLinesIntoCommit
+:command! Gc action Vcs.VcsClone
 
 "" Actions
-:command! Run action Run
-:command! RunAny action ChooseRunConfiguration
-:command! Dbg action Debug
-:command! DbgAny action ChooseDebugConfiguration
+:command! R action Run
+:command! Ra action ChooseRunConfiguration
+:command! D action Debug
+:command! Da action ChooseDebugConfiguration
 
-:command! Stop action Stop
+:command! S action Stop
 
 "" Vim
-noremap <Leader>vv :action VimActions<Cr>
-noremap <Leader>vr :action IdeaVim.ReloadVimRc.reload<Cr>
+:command! V edit ~/.ideavimrc
+:command! Vr action IdeaVim.ReloadVimRc.reload
 
 "" Windows
 noremap <Leader>ww :action Switcher<Cr>
-noremap <Leader>wf :action ActivateProjectToolWindow<Cr>
+noremap <Leader>wf :action ActivateProjectToolWindow<Cr><Esc><Esc>
 noremap <Leader>wt :action ActivateTerminalToolWindow<Cr>
 noremap <Leader>wr :action ActivateRunToolWindow<Cr>
 noremap <Leader>wd :action ActivateDebugToolWindow<Cr>
+noremap <Leader>wg :action ActivateVersionControlToolWindow<Cr>
 noremap <Leader>ws :action ShowSettings<Cr>
 noremap <Leader><Leader> :action HideAllWindows<Cr>
 
 "" Editor
-noremap U <C-R>
 noremap <leader>/ :action FindInPath<Cr>
 
 noremap +y "+y
+vnoremap +y "+y
+noremap +Y "+Y
 noremap +d "+d
+vnoremap +d "+d
+noremap +D "+D
 noremap +c "+c
-noremap +r ciw<C-R>+<Esc>
-vnoremap +r c<C-R>+<Esc>
-noremap +R ciW<C-R>+<Esc>
+vnoremap +c "+c
+noremap +C "+C
+noremap <Tab>o o<C-R>+<Esc>
+noremap <Tab>O O<C-R>+<Esc>
 noremap <Tab>p "+p
 noremap <Tab>P "+P
 
+noremap <Leader># /thistextisdefenedlynotinthisfileifitisiamsorry<Cr>
+
+noremap +r ciw<C-R>+<Esc>
+vnoremap +r c<C-R>+<Esc>
+noremap +R ciW<C-R>+<Esc>
+
+noremap +(r ci(<C-R>+<Esc>
+noremap +)r ci)<C-R>+<Esc>
+noremap <Tab>pr cip<C-R>+<Esc>
+noremap <Tab>Pr cap<C-R>+<Esc>
+
+noremap <C-S> <C-U>zz
+noremap <C-D> <C-D>zz
+
+vnoremap < <gv
+vnoremap > >gv
+
+vnoremap <C-C> "+y
 inoremap <C-V> <C-R>+
 
+nnoremap ö v:action EditorSelectWord<CR>
+vnoremap ö :action EditorSelectWord<CR>
+
+map gj :action GotoDeclaration<CR>:action GotoImplementation<CR>j
+
+:command! Exit action Exit
 :command! Qo action CloseAllEditorsButActive
+
+"" Harpoon
+
+:command! Hq action SetHarpoon1
+:command! Hw action SetHarpoon2
+:command! He action SetHarpoon3
+:command! Hr action SetHarpoon4
+
+nmap <C-q> :action GotoHarpoon1<cr>
+nmap <C-w> :action GotoHarpoon2<cr>
+nmap <C-e> :action GotoHarpoon3<cr>
+nmap <C-r> :action GotoHarpoon4<cr>
+
+nmap <leader>hs :action ShowHarpoon<cr>
+nmap <leader>ha :action AddToHarpoon<cr>
 
 "" Tabs
 noremap L gt
@@ -120,23 +160,28 @@ noremap gp :action GotoSuperMethod<Cr>
 noremap ge :action GotoNextError<Cr>
 noremap gE :action GotoPreviousError<Cr>
 
-noremap gj 32j
-noremap gJ 16j
-noremap gk 32k
-noremap gK 16k
-
 "" Debug
 noremap <Leader>dd :action ToggleLineBreakpoint<Cr>
 noremap <Leader>dc :action AddConditionalBreakpoint<Cr>
 noremap <Leader>de :action EditBreakpoint<Cr>
 
+noremap <C-L> :action StepOver<Cr>
+noremap <C-K> :action StepOut<Cr>
+noremap <C-J> :action StepInto<Cr>
+noremap <C-H> :action ShowExecutionPoint<Cr>
+
+:command! Rs action Resume
+
 """ Languages
 
 "" Rust
-:command! Cgr action Cargo.RefreshCargoProject
-:command! Cgu !cargo update
+
+:command! Rust action Cargo.RefreshCargoProject
+:command! RustUpdate !cargo update
 
 "" Html
+
+"" Open [F]ire[f]ox
 :command! Ff !firefox %
 
 "" Visibility

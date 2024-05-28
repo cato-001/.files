@@ -18,6 +18,26 @@ whichv() {
   which $1 | xargs nvim
 }
 
+# setup ttrace
+tt() {
+  ttrace --interactive today | bat
+}
+ty() {
+  ttrace --interactive yesterday | bat
+}
+
+td() {
+  ttrace --interactive day $1 | bat
+}
+tw() {
+  ttrace --interactive week $1 | bat
+}
+
+alias ts="ttrace start"
+alias tp="ttrace stop"
+alias trn="ttrace rename"
+lias trs="ttrace restart"
+
 # setup scatternotes
 alias sn="scatternotes"
 
