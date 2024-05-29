@@ -10,6 +10,13 @@ alias cpub="cargo publish"
 alias cn="cargo new"
 alias cini="cargo init"
 
+# setup docker
+alias dcup="docker compose up -d"
+dcpup() {
+  docker compose pull
+  docker compose up -d
+}
+
 # setup nvim
 alias v="nvim-open"
 alias vim="nvim"
@@ -81,4 +88,7 @@ alias lf="fd . -t f"
 
 # setup bat
 alias cat="bat"
+
+# setup php-storm
+alias phps="PhpStorm"
 
