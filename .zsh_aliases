@@ -92,3 +92,6 @@ alias cat="bat"
 # setup php-storm
 alias phps="PhpStorm"
 
+# setup tmux
+alias tmn="tmux -u new"
+alias tma="tmux -u attatch"
