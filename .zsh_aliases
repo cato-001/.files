@@ -41,6 +41,10 @@ tw() {
 }
 
 alias ts="ttrace start"
+tsb() {
+  git rev-parse --abbrev-ref HEAD | tr '[:upper:]' '[:lower:]' | xargs ttrace --interactive start
+}
+
 alias tp="ttrace stop"
 alias trn="ttrace rename"
 alias trs="ttrace restart"
