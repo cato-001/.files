@@ -1,12 +1,13 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# setup theme
+# ZSH_THEME="robbyrussell"
 
-# Uncomment the following line to use case-sensitive completion.
+# setup sensitive autocompletion
+HYPHEN_INSENSITIVE="true"
 # CASE_SENSITIVE="true"
 
-HYPHEN_INSENSITIVE="true"
+# COMPLETION_WAITING_DOTS="%F{purple}waiting...%f"
 
 zstyle ':omz:update' mode auto
 zstyle ':omz:update' frequency 1
@@ -14,7 +15,6 @@ zstyle ':omz:update' frequency 1
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
 
-COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -22,9 +22,6 @@ COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(
-  autojump
-  docker-compose
-  common-aliases
   direnv
   git
   npm
@@ -46,15 +43,11 @@ else
   export EDITOR='mvim'
 fi
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
 CURRENT_UPTIME="$(uptime -s)"
 
 # Test for WSL
-if [[ -d /mnt/c/Windows ]]; then
+if [[ -f .wsl ]]
+then
   if ! grep -Fxqs $CURRENT_UPTIME /var/run/uptime-on-last-startup-script-run
   then
     /mnt/c/Windows/system32/wsl.exe -d ${WSL_DISTRO_NAME} -u root /usr/local/bin/startup
@@ -66,27 +59,17 @@ if [[ -d /mnt/c/Windows ]]; then
   export LD_LIBRARY_PATH=/usr/local/lib
 fi
 
+if [[ -d /mnt/c ]]
+then
+  export PATH="$PATH:/mnt/c/Program\\ Files/Mozilla\\ Firefox/"
+fi
+
 export PATH="$PATH:/snap/bin"
 export PATH="$PATH:$HOME/.krew/bin:/usr/local/go/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 
-alias v="nvim"
-alias vim="nvim"
-alias today="nvim +Today"
-alias py="python3"
+source ~/.zsh_aliases
 
-alias fb="featurebranches"
-
-alias -s txt=nvim
-alias -s py=nvim
-alias -s go=nvim
-alias -s json=nvim
-alias -s xml=nvim
-alias -s php=PhpStorm
-
-fb-dns() {
-  fb dns-status | rg mongodb42 | rg $1
-}
-
+eval "$(starship init zsh)"

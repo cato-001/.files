@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [[ -n "$1" ]]
+then
+	search="$1"
+else
+	search="."
+fi
+
+file="$(fd "$search" . --type file | fzf -0 -1)"
+if [[ -z "$file" ]]
+then
+	exit 1
+fi
+
+echo "RESULT $file"
+nvim $file
+

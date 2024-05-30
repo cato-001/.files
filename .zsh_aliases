@@ -1,0 +1,94 @@
+# cargo
+alias c="cargo"
+alias cr="cargo run --"
+alias cb="cargo build"
+alias ck="cargo check"
+alias ca="cargo add"
+alias ci="cargo install"
+alias cu="cargo update"
+alias cpub="cargo publish"
+alias cn="cargo new"
+alias cini="cargo init"
+
+# setup docker
+alias dcup="docker compose up -d"
+dcpup() {
+  docker compose pull
+  docker compose up -d
+}
+
+# setup nvim
+alias v="nvim-open"
+alias vim="nvim"
+
+whichv() {
+  which $1 | xargs nvim
+}
+
+# setup ttrace
+tt() {
+  ttrace --interactive today | bat
+}
+ty() {
+  ttrace --interactive yesterday | bat
+}
+
+td() {
+  ttrace --interactive day $1 | bat
+}
+tw() {
+  ttrace --interactive week $1 | bat
+}
+
+alias ts="ttrace start"
+alias tp="ttrace stop"
+alias trn="ttrace rename"
+alias trs="ttrace restart"
+
+# setup scatternotes
+alias sn="scatternotes"
+
+n() {
+  scatternotes search $1 | xargs nvim
+}
+
+# setup python
+alias py="python3"
+
+# setup traveltrex
+alias fb="featurebranches"
+
+fb-dns() {
+  fb dns-status | rg mongodb42 | rg $1 | xargs -i echo "{}"
+}
+
+fb-st() {
+  fb status | rg "$1|Host|\+|\| Featurebranch" | xargs -i echo "{}"
+}
+
+# setup file aliases
+alias -s txt=nvim
+alias -s py=nvim
+alias -s go=nvim
+alias -s json=nvim
+alias -s xml=nvim
+alias -s php=PhpStorm
+
+# setup zoxide
+eval "$(zoxide init zsh)"
+alias j="z"
+
+# setup eza
+alias ls="eza"
+alias ll="eza -l"
+alias la="eza -la"
+
+# setup fd-find
+alias lf="fd . -t f"
+
+# setup bat
+alias cat="bat"
+
+# setup php-storm
+alias phps="PhpStorm"
+
