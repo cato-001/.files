@@ -22,7 +22,6 @@ zstyle ':omz:update' frequency 1
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(
-  docker-compose
   direnv
   git
   npm

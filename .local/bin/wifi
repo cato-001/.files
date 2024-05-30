@@ -1,5 +1,12 @@
 #!/bin/bash
 
+which nmcli > /dev/null
+if [ $? -eq 1 ]
+then
+	echo "please make sure 'nmcli' is installed!"
+	exit 1
+fi
+
 wifi_connections="$(
 	nmcli connection show |
 	sed 1d |
