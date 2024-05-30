@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ -d /mnt/c ]]
+then
+	/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe "$@"
+else
+	firefox "$@"
+fi
+

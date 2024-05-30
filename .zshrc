@@ -60,6 +60,11 @@ then
   export LD_LIBRARY_PATH=/usr/local/lib
 fi
 
+if [[ -d /mnt/c ]]
+then
+  export PATH="$PATH:/mnt/c/Program\\ Files/Mozilla\\ Firefox/"
+fi
+
 export PATH="$PATH:/snap/bin"
 export PATH="$PATH:$HOME/.krew/bin:/usr/local/go/bin"
 export PATH="$PATH:$HOME/go/bin"

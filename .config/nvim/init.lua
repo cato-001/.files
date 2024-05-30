@@ -327,7 +327,6 @@ local servers = {
   -- clangd = {},
   zls = {},
   gopls = {},
-  pylyzer = {},
   rust_analyzer = {
     settings = {
       ["rust-analyzer"] = {

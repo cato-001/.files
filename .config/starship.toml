@@ -116,6 +116,10 @@ format = "[$duration]($style) "
 min_time = 0
 style = "yellow"
 
+[python]
+format = "python\\([$version]($style)\\) "
+style = "mauve"
+
 [rust]
 format = "rust\\([$version]($style)\\) "
 style = "mauve"
