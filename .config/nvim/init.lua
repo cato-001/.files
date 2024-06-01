@@ -68,7 +68,8 @@ require('lazy').setup({
     init = function()
       local autopairs = require('nvim-autopairs');
       local Rule = require('nvim-autopairs.rule');
-      autopairs.add_rule(Rule('<', '>'))
+      autopairs.add_rule(Rule('<', '>'));
+      autopairs.add_rule(Rule('{%', '%', 'htmldjango'));
     end
   },
 
@@ -360,6 +361,25 @@ local servers = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
+    },
+  },
+  pylsp = {
+    settings = {
+      pylsp_plugins = {
+        autopep8 = {
+          enabled = true
+        },
+        pyls_mypy = {
+          enabled = true
+        },
+        pyls_isort = {
+          enabled = true
+        },
+        flake8 = {
+          enabled = true,
+          executable = ".venv/bin/flake8",
+        },
+      },
     },
   },
   --[[ phpactor = {

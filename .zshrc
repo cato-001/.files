@@ -59,11 +59,6 @@ then
   export LD_LIBRARY_PATH=/usr/local/lib
 fi
 
-if [[ -d /mnt/c ]]
-then
-  export PATH="$PATH:/mnt/c/Program\\ Files/Mozilla\\ Firefox/"
-fi
-
 export PATH="$PATH:/snap/bin"
 export PATH="$PATH:$HOME/.krew/bin:/usr/local/go/bin"
 export PATH="$PATH:$HOME/go/bin"
@@ -73,3 +68,8 @@ export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 source ~/.zsh_aliases
 
 eval "$(starship init zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
