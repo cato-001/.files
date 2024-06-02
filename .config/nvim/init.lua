@@ -356,7 +356,9 @@ local servers = {
     filetypes = { 'rs', 'slint' },
   },
   tsserver = {},
-  html = { filetypes = { 'html', 'twig', 'hbs' } },
+  html = {
+    filetypes = { 'html', 'twig', 'hbs', 'djangohtml' }
+  },
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },

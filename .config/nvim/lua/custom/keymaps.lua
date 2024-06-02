@@ -30,7 +30,7 @@ local function setup_search()
   nmap('<leader>s:', telescope_builtin.command_history, '[S]earch [:] command history')
   nmap('<leader>sh', telescope_builtin.search_history, '[S]earch [H]istory')
 
-  nmap('<leader>s?', telescope_builtin.help_tags, '[S]earch [?] help')
+  nmap('<C-K>', telescope_builtin.help_tags, '[S]earch [?] help')
 
   nmap('<leader>gf', telescope_builtin.git_files, 'Search [G]it [F]iles')
   nmap('<leader>sd', telescope_builtin.diagnostics, '[S]earch [D]iagnostics')
