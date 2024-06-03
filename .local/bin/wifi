@@ -19,7 +19,7 @@ if [ $# -eq 0 ]
 then 
 	choice=$(echo "$wifi_connections" | fzf)
 else
-	choice=$(echo "$wifi_connections" | rg -i $1)
+	choice=$(echo "$wifi_connections" | rg -i $1 | fzf -0 -1)
 fi
 
 if [ -z "$choice" ]
