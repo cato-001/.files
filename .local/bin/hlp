@@ -17,6 +17,8 @@ if [[ $? -eq 1 ]]
 then
 	echo "ERROR \"$1 does not seem to be a command\"" >&2
 	exit 1
+else
+	command="$1"
 fi
 
-$1 --help | less -R
+$command --help | bat
