@@ -40,9 +40,11 @@ tw() {
   ttrace --interactive week $1 | bat
 }
 
-alias ts="ttrace start"
+ts() {
+  echo "$1" | tr '[:upper:]' '[:lower:]' | xargs ttrace --interactive start
+}
 tsb() {
-  git rev-parse --abbrev-ref HEAD | tr '[:upper:]' '[:lower:]' | xargs ttrace --interactive start
+  git rev-parse --abbrev-ref HEAD | xargs ts
 }
 
 alias tp="ttrace stop"
@@ -97,5 +99,5 @@ alias cat="bat"
 alias phps="PhpStorm"
 
 # setup tmux
-alias tmn="tmux -u new"
+alias tmn="tmux -u new -c ~"
 alias tma="tmux -u attatch"

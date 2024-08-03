@@ -7,7 +7,7 @@ else
 	search="."
 fi
 
-file="$(fd "$search" . --type file | fzf -0 -1)"
+file="$(fd "$search" . --type file --type symlink | fzf -0 -1)"
 if [[ -z "$file" ]]
 then
 	exit 1

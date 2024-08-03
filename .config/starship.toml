@@ -146,8 +146,7 @@ format = "php(\\([$version]($style)\\)) "
 style = "mauve"
 
 [git_branch]
-format = "git\\([$branch(:$remote_branch)]($style)\\) "
-style = "mauve"
+format = "$branch(:$remote_branch) "
 
 [git_state]
 format = "\\([$state( $progress_current/$progress_total)]($style)\\) "

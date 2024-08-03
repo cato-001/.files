@@ -108,6 +108,8 @@ noremap <Tab>P "+P
 
 noremap <Leader># /thistextisdefenedlynotinthisfileifitisiamsorry<Cr>
 
+noremap V V_o_
+
 noremap +r ciw<C-R>+<Esc>
 vnoremap +r c<C-R>+<Esc>
 noremap +R ciW<C-R>+<Esc>
