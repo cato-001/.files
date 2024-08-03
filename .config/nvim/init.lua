@@ -12,7 +12,9 @@ commands.setup_autoformat({
   '*.lua',
   '*.rs',
   '*.py',
-  '*.go'
+  '*.go',
+  '*.toml',
+  '*.zig',
 })
 
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
