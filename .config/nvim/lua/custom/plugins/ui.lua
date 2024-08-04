@@ -29,6 +29,23 @@ return {
   },
   {
     'folke/which-key.nvim',
-    opts = {}
+    opts = {},
+    init = function()
+      local which_key = require('which-key')
+      which_key.setup({
+        preset = 'helix',
+      })
+      which_key.add({
+        { '<leader>-', desc = '[-] directory' },
+        { '<leader>f', desc = '[f]iles' },
+        { '<leader>r', desc = '[r]ename' },
+        { '<leader>s', group = '[s]earch' },
+        { '<leader>g', group = '[g]it' },
+        { '<leader>n', desc = '[n]otes' },
+        { '<leader>N', group = '[N]otes' },
+        { '<leader>w', group = '[w]orkspace' },
+        { 'g',         group = '[g]oto' }
+      })
+    end
   },
 }
