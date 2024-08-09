@@ -1,4 +1,6 @@
-local function map(modes, lhs, rhs, desc, opts)
+local M = {}
+
+M.map = function(modes, lhs, rhs, desc, opts)
   if modes == nil then
     return
   end
@@ -12,16 +14,20 @@ local function map(modes, lhs, rhs, desc, opts)
   vim.keymap.set(modes, lhs, rhs, opts)
 end
 
-local function nmap(lhs, rhs, desc, opts)
-  map('n', lhs, rhs, desc, opts)
+M.nmap = function(lhs, rhs, desc, opts)
+  M.map('n', lhs, rhs, desc, opts)
 end
 
-local function nvmap(lhs, rhs, desc, opts)
-  map({ 'n', 'v' }, lhs, rhs, desc, opts)
+M.vmap = function(lhs, rhs, desc, opts)
+  M.map('v', lhs, rhs, desc, opts)
 end
 
-local function imap(lhs, rhs, desc, opts)
-  map('i', lhs, rhs, desc, opts)
+M.nvmap = function(lhs, rhs, desc, opts)
+  M.map({ 'n', 'v' }, lhs, rhs, desc, opts)
+end
+
+M.imap = function(lhs, rhs, desc, opts)
+  M.map('i', lhs, rhs, desc, opts)
 end
 
 local function feedkeys(text, mode)
@@ -29,13 +35,8 @@ local function feedkeys(text, mode)
   vim.api.nvim_feedkeys(text, mode, true)
 end
 
-local function nfeedkeys(text)
+M.nfeedkeys = function(text)
   feedkeys(text, 'n')
 end
 
-return {
-  nmap = nmap,
-  nvmap = nvmap,
-  imap = imap,
-  nfeedkeys = nfeedkeys,
-}
+return M

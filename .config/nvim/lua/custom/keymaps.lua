@@ -1,6 +1,7 @@
 local maps = require 'maps'
 local nvmap = maps.nvmap
 local nmap = maps.nmap
+local vmap = maps.vmap
 local imap = maps.imap
 
 local function setup_system_register()
@@ -43,7 +44,10 @@ local function setup_editor_defaults()
   nmap('V', 'V_', 'Goto start in Visual-Line Mode')
 
   imap('<C-Z>', '<C-V>', 'use <CTRL-Z> to insert special characters', { noremap = true })
-  imap('', '<Esc>ciw', '<CTRL-BS> to delete the current word', { noremap = true })
+  imap('', '<Esc>dBxi', '<CTRL-BS> to delete the current word', { noremap = true })
+
+  vmap('>', '>gv_', 'reselect after indenting')
+  vmap('<', '<gv_', 'reselect after dedenting')
 end
 
 local function setup()
