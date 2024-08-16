@@ -62,6 +62,7 @@ fi
 export PATH="$PATH:/snap/bin"
 export PATH="$PATH:$HOME/.krew/bin:/usr/local/go/bin"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 export PATH="$PATH:$HOME/.local/lib/zig-linux-x86_64-0.12.0"
