@@ -9,9 +9,6 @@ set incsearch
 set ignorecase
 set hlsearch
 
-"" Substitution
-set gdefault
-
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
@@ -43,6 +40,7 @@ noremap <Leader>e :action ShowErrorDescription<Cr>
 "" Files
 noremap <Leader>f :action GotoFile<Cr>
 noremap <Leader>j :action RecentLocations<Cr>
+noremap <Leader>of :action SelectInProjectView<Cr>
 
 :command! NewFile action NewFile
 :command! NewDir action NewDir

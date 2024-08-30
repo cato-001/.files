@@ -332,6 +332,18 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'php',
+  callback = function(ev)
+    vim.lsp.set_log_level('debug')
+    vim.lsp.start({
+      name = 'phpactress',
+      cmd = { 'phpactress' },
+      root_dir = vim.fs.root(ev.buf, { 'composer.json' }),
+    })
+  end,
+})
+
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
 local cmp = require 'cmp'

@@ -42,6 +42,7 @@ end
 local function setup_editor_defaults()
   nmap('U', '<C-R>', 'Redo')
   nmap('V', 'V_', 'Goto start in Visual-Line Mode')
+  nmap('<Esc>', ':nohlsearch<Cr>', 'Turn off search highlights')
 
   imap('<C-Z>', '<C-V>', 'use <CTRL-Z> to insert special characters', { noremap = true })
   imap('', '<Esc>dBxi', '<CTRL-BS> to delete the current word', { noremap = true })

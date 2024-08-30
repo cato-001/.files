@@ -34,6 +34,9 @@ local function setup()
   vim.opt.shiftwidth = 4
 
   vim.opt.swapfile = false
+
+  vim.opt.list = true
+  vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 end
 
 local function set_leader()
