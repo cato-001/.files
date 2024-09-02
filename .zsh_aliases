@@ -63,12 +63,14 @@ alias py="python3"
 
 # setup traveltrex
 alias fb="featurebranches"
+alias fbrb="fb-rebuild"
+alias fbup="fb-up"
 
-fb-dns() {
-  fb dns-status | rg mongodb42 | rg $1 | xargs -i echo "{}"
+fbdns() {
+  fb dns-status | rg $1 | rg $2 | xargs -i echo "{}"
 }
 
-fb-st() {
+fbst() {
   fb status | rg "$1|Host|\+|\| Featurebranch" | xargs -i echo "{}"
 }
 
