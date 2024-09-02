@@ -89,7 +89,7 @@ alias j="z"
 # setup eza
 alias ls="eza"
 alias ll="eza -l"
-alias la="eza -la"
+alias la="eza -lag"
 
 # setup fd-find
 alias lf="fd . -t f"
