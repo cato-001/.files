@@ -14,7 +14,7 @@ commands.setup_autoformat({
   '*.py',
   '*.go',
   '*.toml',
-  '*.zig',
+  -- '*.zig',
 })
 
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
