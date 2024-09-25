@@ -11,6 +11,8 @@ alias cn="cargo new"
 alias cini="cargo init"
 
 # setup docker
+alias dc="docker compose"
+alias dcex="docker compose exec"
 alias dcup="docker compose up -d"
 dcpup() {
   docker compose pull
@@ -65,6 +67,7 @@ alias py="python3"
 alias fb="featurebranches"
 alias fbrb="fb-rebuild"
 alias fbup="fb-up"
+alias fbrm="fb-rm"
 
 fbdns() {
   fb dns-status | rg $1 | rg $2 | xargs -i echo "{}"
@@ -74,13 +77,11 @@ fbst() {
   fb status | rg "$1|Host|\+|\| Featurebranch" | xargs -i echo "{}"
 }
 
-# setup file aliases
-alias -s txt=nvim
-alias -s py=nvim
-alias -s go=nvim
-alias -s json=nvim
-alias -s xml=nvim
-alias -s php=PhpStorm
+gtags() {
+  curl -Ls "https://registry.k8s.traveltrex.local/v2/$1/tags/list"
+}
+
+alias redis="docker compose exec redis redis-cli"
 
 # setup zoxide
 eval "$(zoxide init zsh)"

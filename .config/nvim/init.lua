@@ -80,6 +80,7 @@ require('lazy').setup({
   },
 
   { import = 'custom.plugins' },
+  { import = 'custom.config' },
 }, {
   checker = { enable = true }
 })
