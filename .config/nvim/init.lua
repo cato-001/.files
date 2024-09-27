@@ -215,10 +215,11 @@ local on_attach = function(_, bufnr)
   nmap('<leader>r', vim.lsp.buf.rename, '[r]ename')
   nmap('<leader>a', vim.lsp.buf.code_action, '[a]ction')
 
-  nmap('gd', require('telescope.builtin').lsp_definitions, '[d]efinition')
-  nmap('gn', require('telescope.builtin').lsp_references, '[n] references')
-  nmap('gi', require('telescope.builtin').lsp_implementations, '[i]mplementation')
-  nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, '[D]efinition')
+  local telescope = require('telescope.builtin')
+  nmap('gd', telescope.lsp_definitions, '[d]efinition')
+  nmap('gn', telescope.lsp_references, '[n] references')
+  nmap('gi', telescope.lsp_implementations, '[i]mplementation')
+  nmap('<leader>D', telescope.lsp_type_definitions, '[D]efinition')
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, '[K] documentation')
