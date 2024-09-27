@@ -217,7 +217,7 @@ local on_attach = function(_, bufnr)
 
   nmap('gd', require('telescope.builtin').lsp_definitions, '[d]efinition')
   nmap('gn', require('telescope.builtin').lsp_references, '[n] references')
-  nmap('gI', require('telescope.builtin').lsp_implementations, '[i]mplementation')
+  nmap('gi', require('telescope.builtin').lsp_implementations, '[i]mplementation')
   nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, '[D]efinition')
 
   -- See `:help K` for why this keymap
