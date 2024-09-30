@@ -4,6 +4,18 @@ return {
     lazy = false,
     init = function()
       require('scatternotes').setup({
+        keymaps = {
+          commit = { '<leader>Nc', desc = '[N]otes [C]ommit' },
+        },
+      })
+    end,
+    dev = { true }
+  },
+  {
+    'cato-001/scatter.nvim',
+    lazy = false,
+    opts = {
+      notes = {
         commands = {
           create = {
             ['Personal'] = { 'personal', 'date', 'time' },
@@ -19,11 +31,11 @@ return {
           },
         },
         keymaps = {
-          search = { '<leader>n', desc = 'Search [N]otes' },
-          commit = { '<leader>Nc', desc = '[N]otes [C]ommit' },
-        },
-      })
-    end,
-    dev = { true }
+          search = { '<leader>n', desc = 'Search [n]otes' },
+        }
+      }
+    },
+    dir = "~/projects/scatter.nvim",
+    config = true,
   }
 }

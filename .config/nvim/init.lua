@@ -275,7 +275,6 @@ local servers = {
   slint_lsp = {
     filetypes = { 'rs', 'slint' },
   },
-  tsserver = {},
   html = {
     filetypes = { 'html', 'twig', 'hbs', 'djangohtml' }
   },
