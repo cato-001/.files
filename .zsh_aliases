@@ -99,8 +99,22 @@ alias lf="fd . -t f"
 alias cat="bat"
 
 # setup php-storm
-alias phps="PhpStorm"
+phps() {
+  tmux new-session -s "phpstorm" -d "PhpStorm"
+}
 
 # setup tmux
-alias tmn="tmux -u new -c ~"
-alias tma="tmux -u attatch"
+tmh() {
+  tmux_running=$(pgrep tmux)
+
+  if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    tmux new-session -s home -c ~
+    exit 0
+  fi
+
+  if ! tmux has-session -t=home 2> /dev/null; then
+    tmux new-session -ds home -c ~
+  fi
+
+  tmux switch-client -t home
+}

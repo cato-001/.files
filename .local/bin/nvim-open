@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [[ -n "$1" ]]
 then
@@ -6,13 +6,11 @@ then
 else
 	search="."
 fi
+selected=$(fd "$search" . --type file --type symlink | fzf -0 -1)
 
-file="$(fd "$search" . --type file --type symlink | fzf -0 -1)"
-if [[ -z "$file" ]]
-then
-	exit 1
+if [[ -z $selected ]]; then
+    exit 0
 fi
 
-echo "RESULT $file"
-nvim $file
+tmux new-window "nvim $selected"
 
