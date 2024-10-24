@@ -37,6 +37,9 @@ local function setup()
 
   vim.opt.list = true
   vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+  vim.opt.spelllang = 'en,de'
+  vim.opt.spell = true
 end
 
 local function set_leader()
