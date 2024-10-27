@@ -1,0 +1,1103 @@
+# This is the affix file of the de_DE Hunspell dictionary derived from
+# the igerman98 dictionary
+#
+# Copyright (C) 1998-2011 Bjoern Jacke <bjoern@j3e.de>
+#
+# License: GPLv2, GPLv3 or OASIS distribution license agreement There
+# should be a copy of both of this licenses included with every
+# distribution of this dictionary. Modified versions using the GPL may
+# only include the GPL
+
+
+# Charset used by this dictionary.
+SET UTF-8
+
+# Be compatible with systems / locales were isalpha() doesn't work.
+# (This is unlikely with UTF-8, but doesn't hurt.)
+FOL àáâãäåæçèéêëìíîïðñòóôõöøùúûüýþßÿ
+LOW àáâãäåæçèéêëìíîïðñòóôõöøùúûüýþßÿ
+UPP ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßÿ
+
+
+# FIXME: I'm not sure if this is correct. With this option ' is treated
+# as a word character if it appears between two word characters. E.g. it
+# would be possible to match "auf's" as a valid word. But there are no
+# apostrophes in german, so words like "auf's" or "auf'm" can never be
+# right...
+MIDWORD '
+
+# How compound words are formed. Matches compounds like 'xz' or 'xyz'.
+COMPOUNDRULE xy?z
+
+# Flag for bad / forbidden / excluded words. Same as BAD.
+FORBIDDENWORD d
+
+# Flag for words that must be used in compounds. The word cannot be
+# used alone. Same as NEEDCOMPOUND.
+ONLYINCOMPOUND o
+
+# Prefixes are allowed at the beginning of compounds, suffixes are
+# allowed at the end of compounds by default: (prefix)?(root)+(affix)?
+# Affixes with COMPOUNDPERMITFLAG may be inside of compounds.
+COMPOUNDPERMITFLAG c
+
+# Flag for words that are required to be used with an affix.
+NEEDAFFIX h
+
+# Flag for words were case matters, e.g. 'morgens' is always lower case.
+KEEPCASE w
+
+# Make not all possible suggestions for typos of Flicken or some other
+# rare or offensive words.
+NOSUGGEST n
+
+# Make only words with up to 3 compounds. It would be nice to have at
+# least up to 5 words, but this is a HUGE performance penalty. Even 3
+# may be too much for slow hardware.
+COMPOUNDWORDMAX 3
+
+
+PFX U Y 1
+PFX U   0     un       .
+
+
+PFX V Y 1
+PFX V   0     ver      .
+
+
+SFX F Y 35
+SFX F   0     nen        in
+SFX F   e     in         e
+SFX F   e     innen      e
+SFX F   0     in         [^i]n
+SFX F   0     innen      [^i]n
+SFX F   0     in         [^enr]
+SFX F   0     innen      [^enr]
+SFX F   0     in         [^e]r
+SFX F   0     innen      [^e]r
+SFX F   0     in         [^r]er
+SFX F   0     innen      [^r]er
+SFX F   0     in         [^e]rer
+SFX F   0     innen      [^e]rer
+SFX F   0     in         ierer
+SFX F   0     innen      ierer
+SFX F   er    in         [^i]erer
+SFX F   er    innen      [^i]erer
+SFX F   in    In         in
+SFX F   in    Innen      in
+SFX F   e     In         e
+SFX F   e     Innen      e
+SFX F   0     In         [^i]n
+SFX F   0     Innen      [^i]n
+SFX F   0     In         [^en]
+SFX F   0     Innen      [^en]
+SFX F   0     In         [^e]r
+SFX F   0     Innen      [^e]r
+SFX F   0     In         [^r]er
+SFX F   0     Innen      [^r]er
+SFX F   0     In         [^e]rer
+SFX F   0     Innen      [^e]rer
+SFX F   0     In         ierer
+SFX F   0     Innen      ierer
+SFX F   er    In         [^i]erer
+SFX F   er    Innen      [^i]erer
+
+
+SFX L N 12
+SFX L   0       tlich      n
+SFX L   0       tliche     n
+SFX L   0       tlicher    n
+SFX L   0       tliches    n
+SFX L   0       tlichem    n
+SFX L   0       tlichen    n
+SFX L   0       lich       [^n]
+SFX L   0       liche      [^n]
+SFX L   0       licher     [^n]
+SFX L   0       liches     [^n]
+SFX L   0       lichem     [^n]
+SFX L   0       lichen     [^n]
+
+
+SFX M N 10
+SFX M   0       chen       [^se]
+SFX M   0       chens      [^se]
+SFX M   ass     ässchen    ass
+SFX M   ass     ässchens   ass
+SFX M   oss     össchen    oss
+SFX M   oss     össchens   oss
+SFX M   uss     üsschen    uss
+SFX M   uss     üsschens   uss
+SFX M   e       chen       e
+SFX M   e       chens      e
+
+
+SFX A Y 46
+SFX A   0       r          e
+SFX A   0       n          e
+SFX A   0       m          e
+SFX A   0       s          e
+SFX A   0       e          [^elr]
+SFX A   0       er         [^elr]
+SFX A   0       en         [^elr]
+SFX A   0       em         [^elr]
+SFX A   0       es         [^elr]
+SFX A   0       e          [^e][rl]
+SFX A   0       er         [^e][rl]
+SFX A   0       en         [^e][rl]
+SFX A   0       em         [^e][rl]
+SFX A   0       es         [^e][rl]
+SFX A   0       e          [^u]er
+SFX A   0       er         [^u]er
+SFX A   0       en         [^u]er
+SFX A   0       em         [^u]er
+SFX A   0       es         [^u]er
+SFX A   er      re         uer
+SFX A   er      rer        uer
+SFX A   er      ren        uer
+SFX A   er      rem        uer
+SFX A   er      res        uer
+SFX A   0       e          [eil]el
+SFX A   0       er         [eil]el
+SFX A   0       en         [eil]el
+SFX A   0       em         [eil]el
+SFX A   0       es         [eil]el
+SFX A   el      le         [^eil]el
+SFX A   el      ler        [^eil]el
+SFX A   el      len        [^eil]el
+SFX A   el      lem        [^eil]el
+SFX A   el      les        [^eil]el
+SFX A   lig     elig       [^aeiouhlräüö]lig
+SFX A   lig     elige      [^aeiouhlräüö]lig
+SFX A   lig     eliger     [^aeiouhlräüö]lig
+SFX A   lig     eligen     [^aeiouhlräüö]lig
+SFX A   lig     eligem     [^aeiouhlräüö]lig
+SFX A   lig     eliges     [^aeiouhlräüö]lig
+SFX A   erig    rig        [^hi]erig
+SFX A   erig    rige       [^hi]erig
+SFX A   erig    riger      [^hi]erig
+SFX A   erig    rigen      [^hi]erig
+SFX A   erig    rigem      [^hi]erig
+SFX A   erig    riges      [^hi]erig
+
+
+SFX C Y 88
+SFX C   0       ere        [^elr]
+SFX C   0       erer       [^elr]
+SFX C   0       eren       [^elr]
+SFX C   0       erem       [^elr]
+SFX C   0       eres       [^elr]
+SFX C   0       re         e
+SFX C   0       rer        e
+SFX C   0       ren        e
+SFX C   0       rem        e
+SFX C   0       res        e
+SFX C   0       ere        [^e][lr]
+SFX C   0       erer       [^e][lr]
+SFX C   0       eren       [^e][lr]
+SFX C   0       erem       [^e][lr]
+SFX C   0       eres       [^e][lr]
+SFX C   el      lere       el
+SFX C   el      lerer      el
+SFX C   el      leren      el
+SFX C   el      lerem      el
+SFX C   el      leres      el
+SFX C   er      rere       uer
+SFX C   er      rerer      uer
+SFX C   er      reren      uer
+SFX C   er      rerem      uer
+SFX C   er      reres      uer
+SFX C   0       ere        [^u]er
+SFX C   0       erer       [^u]er
+SFX C   0       eren       [^u]er
+SFX C   0       erem       [^u]er
+SFX C   0       eres       [^u]er
+SFX C   lig     eligere    [^aeiouhlräüö]lig
+SFX C   lig     eligerer   [^aeiouhlräüö]lig
+SFX C   lig     eligeren   [^aeiouhlräüö]lig
+SFX C   lig     eligerem   [^aeiouhlräüö]lig
+SFX C   lig     eligeres   [^aeiouhlräüö]lig
+SFX C   erig    rigere     [^hi]erig
+SFX C   erig    rigerer    [^hi]erig
+SFX C   erig    rigeren    [^hi]erig
+SFX C   erig    rigerem    [^hi]erig
+SFX C   erig    rigeres    [^hi]erig
+SFX C   0       est        [kßsuxz]
+SFX C   0       este       [kßsuxz]
+SFX C   0       ester      [kßsuxz]
+SFX C   0       esten      [kßsuxz]
+SFX C   0       estem      [kßsuxz]
+SFX C   0       estes      [kßsuxz]
+SFX C   0       st         et
+SFX C   0       ste        et
+SFX C   0       ster       et
+SFX C   0       sten       et
+SFX C   0       stem       et
+SFX C   0       stes       et
+SFX C   0       est        [^e]t
+SFX C   0       este       [^e]t
+SFX C   0       ester      [^e]t
+SFX C   0       esten      [^e]t
+SFX C   0       estem      [^e]t
+SFX C   0       estes      [^e]t
+SFX C   0       st         [^kßstxz]
+SFX C   0       ste        [^kßstxz]
+SFX C   0       ster       [^kßstxz]
+SFX C   0       sten       [^kßstxz]
+SFX C   0       stem       [^kßstxz]
+SFX C   0       stes       [^kßstxz]
+SFX C   0       st         nd
+SFX C   0       ste        nd
+SFX C   0       ster       nd
+SFX C   0       sten       nd
+SFX C   0       stem       nd
+SFX C   0       stes       nd
+SFX C   0       est        [^n]d
+SFX C   0       este       [^n]d
+SFX C   0       ester      [^n]d
+SFX C   0       esten      [^n]d
+SFX C   0       estem      [^n]d
+SFX C   0       estes      [^n]d
+SFX C   lig     eligst     [^aeiouhlräüö]lig
+SFX C   lig     eligste    [^aeiouhlräüö]lig
+SFX C   lig     eligster   [^aeiouhlräüö]lig
+SFX C   lig     eligsten   [^aeiouhlräüö]lig
+SFX C   lig     eligstem   [^aeiouhlräüö]lig
+SFX C   lig     eligstes   [^aeiouhlräüö]lig
+SFX C   erig    rigst      [^hi]erig
+SFX C   erig    rigste     [^hi]erig
+SFX C   erig    rigster    [^hi]erig
+SFX C   erig    rigsten    [^hi]erig
+SFX C   erig    rigstem    [^hi]erig
+SFX C   erig    rigstes    [^hi]erig
+
+
+SFX E Y 1
+SFX E   0       e          .
+
+
+SFX f Y 4
+SFX f   ph      f          ph
+SFX f   ph      fen        ph
+SFX f   phie    fie        phie
+SFX f   phie    fien       phie
+
+
+SFX N Y 1
+SFX N   0       n          .
+
+
+SFX P Y 1
+SFX P   0       en         .
+
+
+SFX p Y 24
+SFX p   auf     äufe      auf
+SFX p   auf     äufen     auf
+SFX p   aus     äuser     [hH]aus
+SFX p   aus     äusern    [hH]aus
+SFX p   arkt    ärkte     [mM]arkt
+SFX p   arkt    ärkten    [mM]arkt
+SFX p   ang     änge      ang
+SFX p   ang     ängen     ang
+SFX p   uß      üße       uß
+SFX p   uß      üßen      uß
+SFX p   oß      öße       oß
+SFX p   oß      ößen      oß
+SFX p   aum     äume      aum
+SFX p   aum     äumen     aum
+SFX p   ag      äge       ag
+SFX p   ag      ägen      ag
+SFX p   ug      üge       ug
+SFX p   ug      ügen      ug
+SFX p   all     älle      all
+SFX p   all     ällen     all
+SFX p   ass     ässe      ass
+SFX p   ass     ässen     ass
+SFX p   uss     üsse      uss
+SFX p   uss     üssen     uss
+
+
+SFX R Y 3
+SFX R   0       er         [^e]
+SFX R   0       ern        [^e]
+SFX R   0       r          e
+
+
+SFX S Y 1
+SFX S   0       s          .
+
+
+SFX q Y 2
+SFX q   0       se        s
+SFX q   0       sen       s
+
+
+SFX Q Y 1
+SFX Q   0       ses       s
+
+
+SFX T Y 1
+SFX T   0       es         .
+
+
+SFX J Y 12
+SFX J   n       ung        [bgkpßsz]eln
+SFX J   n       ungen      [bgkpßsz]eln
+SFX J   eln     lung       eln
+SFX J   n       ung        ern
+SFX J   en      ung        en
+SFX J   eln     lungen     eln
+SFX J   n       ungen      ern
+SFX J   en      ungen      en
+SFX J   0       ung        [^n]
+SFX J   0       ungen      [^n]
+SFX J   el      lung       el
+SFX J   el      lungen     el
+
+
+SFX B N 12
+SFX B   n       bar        e[lr]n
+SFX B   n       bare       e[lr]n
+SFX B   n       baren      e[lr]n
+SFX B   n       barer      e[lr]n
+SFX B   n       bares      e[lr]n
+SFX B   n       barem      e[lr]n
+SFX B   en      bar        en
+SFX B   en      bare       en
+SFX B   en      baren      en
+SFX B   en      barer      en
+SFX B   en      bares      en
+SFX B   en      barem      en
+
+
+SFX D Y 6
+SFX D   0       d          n
+SFX D   0       de         n
+SFX D   0       den        n
+SFX D   0       der        n
+SFX D   0       des        n
+SFX D   0       dem        n
+
+
+
+SFX W Y 5
+SFX W   en      0          en
+SFX W   n       0          [^e]n
+SFX W   st      0          [^s]st
+SFX W   t       0          sst
+SFX W   t       0          [^s]t
+
+
+SFX I Y 16
+SFX I   n       0          en
+SFX I   eln     le         eln
+SFX I   n       e          eln
+SFX I   ern     re         ern
+SFX I   n       e          ern
+SFX I   n       t          e[lr]n
+SFX I   n       t          [dt]en
+SFX I   en      t          [^dimnt]en
+SFX I   en      t          eien
+SFX I   n       t          [^e]ien
+SFX I   n       t          chnen
+SFX I   en      t          [^c]h[mn]en
+SFX I   n       t          [^aäehilmnoöuür][mn]en
+SFX I   en      t          [aäeilmnoöuür][mn]en
+SFX I   n       e          un
+SFX I   n       t          un
+
+
+SFX X Y 26
+SFX X   n       t          e[lr]n
+SFX X   n       t          [dtw]en
+SFX X   en      t          eien
+SFX X   n       t          [^e]ien
+SFX X   en      t          [^ditmnw]en
+SFX X   n       t          chnen
+SFX X   en      t          [^c]h[mn]en
+SFX X   n       t          [^aäehilmnoöuür][mn]en
+SFX X   en      t          [aäeilmnoöuür][mn]en
+SFX X   n       t          un
+SFX X   st      0          tst
+SFX X   n       st         e[lr]n
+SFX X   n       st         [dtw]en
+SFX X   en      st         [^dimnßstwzx]en
+SFX X   en      st         eien
+SFX X   n       st         [^e]ien
+SFX X   n       st         chnen
+SFX X   en      st         [^c]h[mn]en
+SFX X   n       st         [^aäehilmnoöuür][mn]en
+SFX X   en      st         [aäeilmnoöuür][mn]en
+SFX X   n       st         un
+SFX X   n       st         [ßsxz]en
+SFX X   n       st         ssen
+SFX X   n       st         schen
+SFX X   t       st         [^sz]t
+SFX X   t       est        zt
+
+
+SFX Y Y 36
+SFX Y   n       te         e[lr]n
+SFX Y   n       te         [dtw]en
+SFX Y   en      te         [^dimntw]en
+SFX Y   en      te         eien
+SFX Y   n       te         [^e]ien
+SFX Y   n       te         chnen
+SFX Y   en      te         [^c]h[mn]en
+SFX Y   n       te         [^aäehilmnoöuür][mn]en
+SFX Y   en      te         [aäeilmnoöuür][mn]en
+SFX Y   n       test       e[lr]n
+SFX Y   n       test       [dtw]en
+SFX Y   en      test       [^dimntw]en
+SFX Y   en      test       eien
+SFX Y   n       test       [^e]ien
+SFX Y   n       test       chnen
+SFX Y   en      test       [^c]h[mn]en
+SFX Y   n       test       [^aäehilmnoöuür][mn]en
+SFX Y   en      test       [aäeilmnoöuür][mn]en
+SFX Y   n       tet        e[lr]n
+SFX Y   n       tet        [dtw]en
+SFX Y   en      tet        [^dimntw]en
+SFX Y   en      tet        eien
+SFX Y   n       tet        [^e]ien
+SFX Y   n       tet        chnen
+SFX Y   en      tet        [^c]h[mn]en
+SFX Y   n       tet        [^aäehilmnoöuür][mn]en
+SFX Y   en      tet        [aäeilmnoöuür][mn]en
+SFX Y   n       ten        e[lr]n
+SFX Y   n       ten        [dtw]en
+SFX Y   en      ten        [^dimntw]en
+SFX Y   en      ten        eien
+SFX Y   n       ten        [^e]ien
+SFX Y   n       ten        chnen
+SFX Y   en      ten        [^c]h[mn]en
+SFX Y   n       ten        [^aäehilmnoöuür][mn]en
+SFX Y   en      ten        [aäeilmnoöuür][mn]en
+
+
+SFX Z Y 13
+SFX Z   0       st         [^hßsz]
+SFX Z   0       st         [^c]h
+SFX Z   0       st         [^s]ch
+SFX Z   0       est        [dfkstz]
+SFX Z   0       est        ch
+SFX Z   0       est        [au]ß
+SFX Z   0       est        ieß
+SFX Z   0       est        [io]ss
+SFX Z   0       t          [^dt]
+SFX Z   0       et         [dt]
+SFX Z   0       n          e
+SFX Z   0       en         ie
+SFX Z   0       en         [^e]
+
+
+SFX O Y 21
+SFX O   n       tes        e[lr]n
+SFX O   n       tes        [dtw]en
+SFX O   en      tes        [^dmntw]en
+SFX O   n       tes        chnen
+SFX O   en      tes        [^c]h[mn]en
+SFX O   n       tes        [^aäehilmnoöuür][mn]en
+SFX O   en      tes        [aäeilmnoöuür][mn]en
+SFX O   n       ter        e[lr]n
+SFX O   n       ter        [dtw]en
+SFX O   en      ter        [^dmntw]en
+SFX O   n       ter        chnen
+SFX O   en      ter        [^c]h[mn]en
+SFX O   n       ter        [^aäehilmnoöuür][mn]en
+SFX O   en      ter        [aäeilmnoöuür][mn]en
+SFX O   n       tem        e[lr]n
+SFX O   n       tem        [dtw]en
+SFX O   en      tem        [^dmntw]en
+SFX O   n       tem        chnen
+SFX O   en      tem        [^c]h[mn]en
+SFX O   n       tem        [^aäehilmnoöuür][mn]en
+SFX O   en      tem        [aäeilmnoöuür][mn]en
+
+
+REP 28
+REP f ph
+REP ph f
+REP ß ss
+REP ss ß
+REP s ss
+REP ss s
+REP i ie
+REP ie i
+REP ee e
+REP o oh
+REP oh o
+REP a ah
+REP ah a
+REP e eh
+REP eh e
+REP ae ä
+REP oe ö
+REP ue ü
+REP Ae Ä
+REP Oe Ö
+REP Ue Ü
+REP d t
+REP t d
+REP th t
+REP t th
+REP r rh
+REP ch k
+REP k ch
+
+
+# Affixes signed  with CIRCUMFIX flag may be on a word when this word
+# also has a prefix with CIRCUMFIX flag and vice versa. Used below for
+# decapitalizing nouns with fogemorphemes.
+#
+# FIXME: This must be defined here because 'f' is already used above.
+# It seems to work okay, but I'm not sure if by accident or design.
+CIRCUMFIX f
+
+
+PFX i Y 1
+PFX i 0 /coyf .
+
+SFX j Y 3
+SFX j 0 /xoc .
+SFX j 0 /zocf .
+SFX j 0 /cz .
+
+
+# Female forms for compound/Compound words. This is for gendered forms,
+# e.g. 'Schülerinnen' (female form of 'Schüler') vs. 'SchülerInnen'
+# (both male and female form in one word).
+#
+# Attention: [^e][^n] does also filter out "...er" !
+SFX g Y 12
+SFX g 0  innen/xyoc [^n]
+SFX g en innen/xyoc en
+SFX g 0  Innen/xyoc [^n]
+SFX g en Innen/xyoc en
+SFX g 0  innen/xyocf [^n]
+SFX g en innen/xyocf en
+SFX g 0  Innen/xyocf [^n]
+SFX g en Innen/xyocf en
+SFX g 0  innen/cz [^n]
+SFX g en innen/cz en
+SFX g 0  Innen/cz [^n]
+SFX g en Innen/cz en
+
+
+PFX k Y 2
+PFX k 0 /coxf .
+PFX k 0 /coy .
+
+
+SFX e Y 1
+SFX e 0 /yoc .
+
+
+# Letters, that are very much alike. Used to generate suggestions.
+MAP 9
+MAP aàáâãäå
+MAP eèéêë
+MAP iìíîï
+MAP oòóôõö
+MAP uùúûü
+MAP nñ
+MAP cç
+MAP yÿý
+MAP sß
+
+
+# -------------------------------------------------------------------- #
+
+
+# German phonetic transformation rules for use with Aspell
+# Copyright (C) 2000 Björn Jacke
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License version 2.1 as published by the Free Software Foundation;
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307
+# USA
+#
+# Björn Jacke may be reached by email at bjoern.jacke@gmx.de
+
+
+SAL followup        1
+SAL collapse_result 1
+
+
+SAL ÄER-                 E
+SAL ÄU<                  EU
+SAL Ä<                   E
+SAL É                    E
+SAL ÖER-                 Ö
+SAL Ö                    Ö
+SAL ÜBER^^               IPA
+SAL ÜER-                 I
+SAL Ü                    I
+SAL ß                    Z
+SAL ABELLE$              APL
+SAL ABELL$               APL
+SAL ABIENNE$             APIN
+SAL ACEY$                AZI
+SAL AEU<                 EU
+SAL AE2                  E
+SAL AGNI-^               AKN
+SAL AGNIE-               ANI
+SAL AGN(AEOU)-$          ANI
+SAL AIA2                 AIA
+SAL AIE$                 E
+SAL AILL(EOU)-           ALI
+SAL AINE$                EN
+SAL AIRE$                ER
+SAL AIR-                 E
+SAL AISE$                EZ
+SAL AISSANCE$            EZANZ
+SAL AISSE$               EZ
+SAL AIX$                 EX
+SAL AJ(AÄEIOÖUÜ)--       A
+SAL AKTIE                AXIE
+SAL ALO(IY)^             ALUI
+SAL AMATEU(RS)-          ANATÖ
+SAL ANIELLE$             ANIL
+SAL ANTI^^               ANTI
+SAL ANVER^^              ANFA
+SAL ATIA$                ATIA
+SAL ATIA(NS)--           ATI
+SAL ATI(AÄOÖUÜ)-         AZI
+SAL AUAU--               _
+SAL AUER<                AUA
+SAL AUF^^                AUF
+SAL AULT$                U
+SAL AUSSE$               UZ
+SAL AUS(ST)-^            AUZ
+SAL AUS^^                AUZ
+SAL AUTO^^               AUTU
+SAL AUX(IY)-             AUX
+SAL AUX                  U
+SAL AU                   AU
+SAL AVIER$               AFIE
+SAL AYER--<              EI
+SAL AY(AÄEIOÖUÜ)--       A
+SAL A(IJY)<              EI
+SAL A                    A
+SAL BEA(BCMNRU)-^        PEA
+SAL BEAT(AEIMORU)-^      PEAT
+SAL BEIGE^$              PEZ
+SAL BE(LMNRST)-^         PE
+SAL BETTE$               PET
+SAL BIC$                 PIZ
+SAL BOWL(EI)-            PUL
+SAL BP(AÄEIOÖRUÜY)-      P
+SAL BUDGET7              PIKE
+SAL BUFFET7              PIFE
+SAL BYLLE$               PILE
+SAL BYLL$                PIL
+SAL BYTE<                PEIT
+SAL B                    P
+SAL CÄ-                  Z
+SAL CÜ$                  ZI
+SAL CACH(EI)-^           KEZ
+SAL CAE--                Z
+SAL CA(IY)$              ZEI
+SAL CCH                  Z
+SAL CCE-                 X
+SAL CE(EIJUY)--          Z
+SAL CENT<                ZENT
+SAL CERST(EI)----^       KE
+SAL CER$                 ZA
+SAL CE3                  ZE
+SAL CHAO(ST)-            KAU
+SAL CHAMPIO-^            ZENPI
+SAL CHAR(AI)-^           KAR
+SAL CHAU(CDFSVWXZ)-      ZU
+SAL CHE(CF)-             ZE
+SAL CHEM-^               KE
+SAL CHEQUE<              ZEK
+SAL CHI(CFGPVW)-         ZI
+SAL CH(AEUY)-<^          Z
+SAL CHK-                 _
+SAL CH(LOR)-<^           K
+SAL CHST-                X
+SAL CH(SßXZ)3            X
+SAL CH                   K
+SAL CIER$                ZIE
+SAL CYB-^                ZEI
+SAL CY9^                 ZI
+SAL C(IJY)-3             Z
+SAL CKST                 XT
+SAL CK(SßXZ)3            X
+SAL C(CK)-               _
+SAL CLAUDET---           KLU
+SAL CLAUDINE^$           KLUTIN
+SAL COLE$                KUL
+SAL COUCH                KAUZ
+SAL CQUES$               K
+SAL CQUE                 K
+SAL CREAT-^              KREA
+SAL CST                  XT
+SAL CS<^                 Z
+SAL C(SßX)               X
+SAL CT(SßXZ)             X
+SAL CZ<                  Z
+SAL C<                   K
+SAL D'H^                 T
+SAL D'S3$                Z
+SAL DAVO(NR)-^$          TAFU
+SAL DD(SZ)--<            _
+SAL DEPOT7               TEPU
+SAL DESIGN               TIZEIN
+SAL DE(LMNRST)-3^        TE
+SAL DETTE$               TET
+SAL DIC$                 TIZ
+SAL DJ(AEIOU)-^          I
+SAL DS(CH)--<            T
+SAL DST                  ZT
+SAL DT-                  _
+SAL DUIS-^               TI
+SAL DURCH^^              TURK
+SAL DZS(CH)--            T
+SAL D(SßZ)               Z
+SAL D                    T
+SAL EAULT$               U
+SAL EAUX$                U
+SAL EAU                  U
+SAL EAV                  IF
+SAL EA(AÄEIOÖÜY)-3       EA
+SAL EA3$                 EA
+SAL EA3                  I
+SAL EBEN^^               EPN
+SAL EE9                  E
+SAL EIEI--               _
+SAL EIH--                E
+SAL EILLE$               EI
+SAL EI                   EI
+SAL EJ$                  EI
+SAL EL-^                 E
+SAL EL(DKL)--1           E
+SAL EL(MNT)--1$          E
+SAL ELYNE$               ELINE
+SAL ELYN$                ELIN
+SAL EL(AÄEIOÖUÜY)-1      EL
+SAL EL-1                 L
+SAL EM-^                 E
+SAL EM(DFKMPQT)--1       E
+SAL EM(AÄEIOÖUÜY)--1     E
+SAL EM-1                 N
+SAL EN-^                 E
+SAL EN(CDGKQT)--1        E
+SAL ENZ(AEIOUY)--1       EN
+SAL EN(AÄEINOÖUÜY)-1     EN
+SAL EN-<1                N
+SAL ERH(AÄEIOÖUÜ)-^      ER
+SAL ER-^                 E
+SAL ER(AÄEIOÖUÜY)-1      A
+SAL ER1$                 A
+SAL ER<1                 A
+SAL ETI(AÄOÖÜU)-         EZI
+SAL EUEU--               _
+SAL EUILLE$              Ö
+SAL EUR$                 ÖR
+SAL EUX                  Ö
+SAL EUYS$                EUZ
+SAL EU                   EU
+SAL EYER<                EIA
+SAL EY<                  EI
+SAL E                    E
+SAL FANS--^$             FE
+SAL FAN-^$               FE
+SAL FAULT-               FUL
+SAL FEE(DL)-             FI
+SAL FEHLER               FELA
+SAL FE(LMNRST)-3^        FE
+SAL FOND7                FUN
+SAL FRAIN$               FRA
+SAL FRISEU(RS)-          FRIZÖ  # x
+SAL F                    F
+SAL G'S$                 X
+SAL GAGS^$               KEX
+SAL GAG^$                KEK
+SAL GD                   KT
+SAL GEGEN^^              KEKN
+SAL GE(LMNRST)-3^        KE
+SAL GETTE$               KET
+SAL G(CK)-               _
+SAL GG-                  _
+SAL GI(AO)-^             I
+SAL GION$                KIUN
+SAL GIUS-^               IU
+SAL GMBH^$               GMPH
+SAL GNAC$                NIAK
+SAL GNON$                NIUN
+SAL GN$                  N
+SAL GONCAL-^             KUNZA
+SAL GS(CH)--             K
+SAL GST                  XT
+SAL G(SßXZ)              X
+SAL GUCK-                KU
+SAL GUI-^                K
+SAL G                    K
+SAL HEAD-                E
+SAL HE(LMNRST)-3^        E
+SAL HE(LMN)-1            E
+SAL HEUR1$               ÖR
+SAL H^                   _
+SAL IEC$                 IZ
+SAL IEI-3                _
+SAL IELL3                IEL
+SAL IENNE$               IN
+SAL IERRE$               IER
+SAL IETTE$               IT
+SAL IEU                  IÖ
+SAL IE<4                 I
+SAL IGHT3$               EIT
+SAL IGNI(EO)-            INI
+SAL IGN(AEOU)-$          INI
+SAL IJ(AOU)-             I
+SAL IJ$                  I
+SAL IJ<                  EI
+SAL IKOLE$               IKUL
+SAL ILLAN(STZ)--         ILIA
+SAL ILLAR(DT)--          ILIA
+SAL INVER-               INFE
+SAL ITI(AÄOÖUÜ)-         IZI
+SAL IVIER$               IFIE
+SAL I                    I
+SAL JAVIE---<^           ZA
+SAL JEAN^$               IA
+SAL JEAN-^               IA
+SAL JER-^                IE
+SAL JE(LMNST)-           IE
+SAL JOR(GK)^$            IÖRK
+SAL J                    I
+SAL KC(ÄEIJ)-            X
+SAL KE(LMNRST)-3^        KE
+SAL KH<^                 K
+SAL KIC$                 KIZ
+SAL KLE(LMNRST)-3^       KLE
+SAL KOTELE-^             KUTL
+SAL KREAT-^              KREA
+SAL KST                  XT
+SAL K(SßXZ)              X
+SAL KTI(AIOU)-3          XI
+SAL KT(SßXZ)             X
+SAL K                    K
+SAL LARVE-               LARF
+SAL LEAND-^              LEAN
+SAL LEL-                 LE
+SAL LE(MNRST)-3^         LE
+SAL LETTE$               LET
+SAL LFGNAG-              LFKAN
+SAL LIC$                 LIZ
+SAL LIVE^$               LEIF
+SAL LUI(GS)--            LU
+SAL L                    L
+SAL MASSEU(RS)-          NAZÖ
+SAL MAURICE              NURIZ
+SAL MBH^$                MPH
+SAL MB(SßZ)-             N
+SAL MC9^                 NK
+SAL MEMOIR-^             NENUA
+SAL ME(LMNRST)-3^        NE
+SAL MIGUEL               NIKL
+SAL MIKE^$               NEIK
+SAL MN                   N
+SAL MPJUTE-              NPUT
+SAL MP(SßZ)-             N
+SAL MP(BDJLMNPQRTVW)-    NP
+SAL M                    N
+SAL NACH^^               NAK
+SAL NADINE               NATIN
+SAL NAIV--               NA
+SAL NAISE$               NEZE
+SAL NCOISE$              ZUA
+SAL NCOIS$               ZUA
+SAL NEBEN^^              NEPN
+SAL NE(LMNRST)-3^        NE
+SAL NEN-3                NE
+SAL NETTE$               NET
+SAL NG(BDFJLMNPQRTVW)-   NK
+SAL NICHTS^^             NIX
+SAL NICHT^^              NIKT
+SAL NINE$                NIN
+SAL NON^^                NUN
+SAL NOT^^                NUT
+SAL NTI(AIOU)-3          NZI
+SAL NTIEL--3             NZI
+SAL NYLON                NEILUN
+SAL ND(SßZ)$             NZ
+SAL NT(SßZ)$             NZ
+SAL ND'S$                NZ
+SAL NT'S$                NZ
+SAL NSTS$                NZ
+SAL N                    N
+SAL OBER^^               UPA
+SAL OE2                  Ö
+SAL OGNIE-               UNI
+SAL OGN(AEOU)-$          UNI
+SAL OIE$                 Ö
+SAL OIR$                 UAR
+SAL OIX                  UA
+SAL OI<3                 EU
+SAL OJ(AÄEIOÖUÜ)--       U
+SAL OKAY^$               UKE
+SAL OLYN$                ULIN
+SAL OTI(AÄOÖUÜ)-         UZI
+SAL OUI^                 FI
+SAL OUILLE$              ULIE
+SAL OU(DT)-^             AU
+SAL OUSE$                AUZ
+SAL OUT-                 AU
+SAL OU                   U
+SAL OWS$                 UZ
+SAL OY(AÄEIOÖUÜ)--       U
+SAL O(JY)<               EU
+SAL O                    U
+SAL PATIEN--^            PAZI
+SAL PENSIO-^             PANZI
+SAL PE(LMNRST)-3^        PE
+SAL PFER-^               FE
+SAL P(FH)<               F
+SAL POLY^^               PULI
+SAL PORTRAIT7            PURTRE
+SAL PP(FH)--<            P
+SAL PP-                  _
+SAL PRIX^$               PRI
+SAL P(SßZ)^              Z
+SAL PTI(AÄOÖUÜ)-3        PZI
+SAL PIC^$                PIK
+SAL P                    P
+SAL QUE(LMNRST)-3        KFE
+SAL QUE$                 K
+SAL QUI(NS)$             KI
+SAL QU                   KF
+SAL Q<                   K
+SAL RCH                  RK
+SAL RECHERCH^            REZAZ
+SAL RER$                 RA
+SAL RE(MNR)-4            RE
+SAL RETTE$               RET
+SAL RH<^                 R
+SAL RJA(MN)--            RI
+SAL RTI(AÄOÖUÜ)-3        RZI
+SAL RY(KN)-$             RI
+SAL R                    R
+SAL SAFE^$               ZEIF
+SAL SAUCE-^              ZUZ
+SAL SCHSCH---7           _
+SAL SCHTSCH              Z
+SAL SC(HZ)<              Z
+SAL SC                   ZK
+SAL SELBSTST--7^^        ZELP
+SAL SELBST7^^            ZELPZT
+SAL SERVICE7^            ZÖRFIZ
+SAL SE(LMNRST)-3^        ZE
+SAL SETTE$               ZET
+SAL SHP-^                Z
+SAL SHST                 ZT
+SAL SHTSH                Z
+SAL SHT                  Z
+SAL SH3                  Z
+SAL SIEGLI-^             ZIKL
+SAL SIGLI-^              ZIKL
+SAL SIGHT                ZEIT
+SAL SIGN                 ZEIN
+SAL SKI(NPZ)-            ZKI
+SAL SKI<^                ZI
+SAL SOUND-               ZAUN
+SAL STAATS^^             ZTAZ
+SAL STADT^^              ZTAT
+SAL START^^              ZTART
+SAL STAURANT7            ZTURAN
+SAL STEAK-               ZTE
+SAL STRAF^^              ZTRAF
+SAL ST'S$                Z
+SAL STST--               _
+SAL STS(ACEHIOUÄÜÖ)--    ZT
+SAL ST(SZ)               Z
+SAL STYN(AE)-$           ZTIN
+SAL ST                   ZT
+SAL SZE(NPT)-^           ZE
+SAL SZI(ELN)-^           ZI
+SAL SZCZ<                Z
+SAL SZT<                 ZT
+SAL SZ<3                 Z
+SAL S                    Z
+SAL T'S3$                Z
+SAL TCH                  Z
+SAL TEAT-^               TEA
+SAL TE(LMNRST)-3^        TE
+SAL TH<                  T
+SAL TIC$                 TIZ
+SAL TOAS-^               TU
+SAL TOILET-              TULE
+SAL TOIN-                TUA
+SAL TRAINI-              TREN
+SAL TSCH                 Z
+SAL TSH                  Z
+SAL TST                  ZT
+SAL T(Sß)                Z
+SAL TT(SZ)--<            _
+SAL TT9                  T
+SAL TZ-                  _
+SAL T                    T
+SAL UEBER^^              IPA
+SAL UE2                  I
+SAL UIE$                 I
+SAL UM^^                 UN
+SAL UNTERE--             UNTE
+SAL UNTER^^              UNTA
+SAL UNVER^^              UNFA
+SAL UN^^                 UN
+SAL UTI(AÄOÖUÜ)-         UZI
+SAL U                    U
+SAL VACL-^               FAZ
+SAL VAC$                 FAZ
+SAL VEDD-^               FE
+SAL VEREIN               FAEIN
+SAL VERSEN^              FAZN
+SAL VER^^                FA
+SAL VER                  FA
+SAL VET(HT)-^            FET
+SAL VETTE$               FET
+SAL VIC$                 FIZ
+SAL VIEL                 FIL
+SAL VIEW                 FIU
+SAL VOR^^                FUR
+SAL VY9^                 FI
+SAL V<                   F
+SAL WE(LMNRST)-3^        FE
+SAL WIC$                 FIZ
+SAL WIEDER^^             FITA
+SAL WY9^                 FI
+SAL W                    F
+SAL XE(LMNRST)-3^        XE
+SAL X<^                  Z
+SAL X(CSZ)               X
+SAL XTS(CH)--            XT
+SAL XT(SZ)               Z
+SAL X                    X
+SAL YE(LMNRST)-3^        IE
+SAL YE-3                 I
+SAL YOR(GK)^$            IÖRK
+SAL Y(AOU)-<7            I
+SAL YVES^$               IF
+SAL YVONNE^$             IFUN
+SAL Y                    I
+SAL ZC(AOU)-             ZK
+SAL ZE(LMNRST)-3^        ZE
+SAL ZH<                  Z
+SAL ZS(CHT)--            _
+SAL ZS                   Z
+SAL ZUERST               ZUERZT
+SAL ZURÜCK^^             ZURIK
+SAL ZUVER^^              ZUFA
+SAL Z                    Z
+
