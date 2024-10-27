@@ -33,22 +33,6 @@ When there are errors:
 
 ## Requirements
 
-> **Go-Lang**
-> 
-> [Website >>](https://go.dev/dl/)
-
-> **Luarocks**
-> 
-> [Github >>](https://github.com/luarocks/luarocks/wiki/Download)
-
-> **Rustup**
-> 
-> [Website >>](https://rustup.rs/)
-
-> **Php**
-> 
-> [Website >>](https://www.php.net/downloads.php)
-
 > **Php Composer**
 > 
 > [Website >>](https://getcomposer.org/download/)
