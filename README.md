@@ -33,24 +33,6 @@ When there are errors:
 
 ## Requirements
 
-> **Fd-Find**
-> ```bash
-> sudo apt install fd-find
-> ```
-> [Github >>](https://github.com/sharkdp/fd)
-
-> **RipGrep**
-> ```bash
-> sudo apt install ripgrep
-> ```
-> [Github >>](https://github.com/BurntSushi/ripgrep)
-
-> **FZF**
-> ```bash
-> sudo apt install fzf
-> ```
-> [Github >>](https://github.com/junegunn/fzf)
-
 > **Go-Lang**
 > 
 > [Website >>](https://go.dev/dl/)
@@ -82,25 +64,6 @@ When there are errors:
 > cargo install bat --locked
 > ```
 > [Github >>](https://github.com/sharkdp/bat?tab=readme-ov-file#installation)
-
-> **Zoxide**
-> ```bash
-> cargo install zoxide --locked
-> ```
-> [Github >>](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation)
-
-> **Eza**
-> ```bash
-> cargo install eza --locked
-> ```
-> [Github >>](https://github.com/eza-community/eza)
-
-> **Zellij**
-> ```bash
-> cargo install --locked zellij
-> ```
-> [Github >>](https://github.com/zellij-org/zellij)
-> [Documentation >>](https://zellij.dev/documentation/introduction)
 
 > **Starship**
 > ```bash

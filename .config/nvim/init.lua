@@ -39,6 +39,11 @@ require('lazy').setup({
   'tpope/vim-sleuth',
 
   {
+    "christoomey/vim-tmux-navigator",
+    lazy = false
+  },
+
+  {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {

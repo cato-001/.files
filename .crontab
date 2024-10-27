@@ -1,2 +1,0 @@
-0,15,30,45 * * * * ~/jobs/sync-notes.sh
-0,15,30,45 * * * * ~/jobs/sync-dotfiles.sh
