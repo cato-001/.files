@@ -9,8 +9,8 @@
   home.packages = [
     pkgs.tmux
     pkgs.zsh
-    pkgs.oh-my-posh
     pkgs.neovim
+    pkgs.oh-my-posh
 
     pkgs.ripgrep
     pkgs.fd
