@@ -9,6 +9,7 @@
   home.packages = [
     pkgs.tmux
     pkgs.zsh
+    pkgs.oh-my-posh
     pkgs.neovim
 
     pkgs.ripgrep
@@ -42,6 +43,7 @@
   home.file = {
     ".zshrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.files/.config/zsh/rc.zsh";
     ".p10k.zsh".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.files/.config/zsh/p10k.zsh";
+    ".ideavimrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.files/.config/ideavimrc";
   };
 
   programs = {
