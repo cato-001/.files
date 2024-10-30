@@ -63,10 +63,10 @@ whichv ="which $1 | xargs nvim";
 
 py="python3";
 
-alias fb="featurebranches";
-alias fbrb="fb-rebuild";
-alias fbup="fb-up";
-alias fbrm="fb-rm";
+fb="featurebranches";
+fbrb="fb-rebuild";
+fbup="fb-up";
+fbrm="fb-rm";
 fbdns="fb dns-status | rg $1 --color never | rg $2 --color never";
 fbst = "fb status | rg \"$1|Host|\+|\| Featurebranch\" --color never";
 
