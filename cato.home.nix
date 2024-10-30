@@ -40,53 +40,48 @@
       enable = true;
 
       shellAliases = {
-c="cargo";
-cr="cargo run --";
-cb="cargo build";
-ck="cargo check";
-ca="cargo add";
-ci="cargo install";
-cu="cargo update";
-cpub="cargo publish";
-cn="cargo new";
-cini="cargo init";
+        c="cargo";
+        cr="cargo run --";
+        cb="cargo build";
+        ck="cargo check";
+        ca="cargo add";
+        ci="cargo install";
+        cu="cargo update";
+        cpub="cargo publish";
+        cn="cargo new";
+        cini="cargo init";
 
-dc="docker compose";
-dcex="docker compose exec";
-dcup="docker compose up -d";
-dcpup = "docker compose pull; docker compose up -d";
+        dc="docker compose";
+        dcex="docker compose exec";
+        dcup="docker compose up -d";
+        dcpup = "docker compose pull; docker compose up -d";
 
-v="nvim-open";
-vim="nvim";
+        v="nvim-open";
+        vim="nvim";
 
-whichv ="which $1 | xargs nvim";
+        whichv ="which $1 | xargs nvim";
 
-py="python3";
+        py="python3";
 
-fb="featurebranches";
-fbrb="fb-rebuild";
-fbup="fb-up";
-fbrm="fb-rm";
-fbdns="fb dns-status | rg $1 --color never | rg $2 --color never";
-fbst = "fb status | rg \"$1|Host|\+|\| Featurebranch\" --color never";
+        fb="featurebranches";
+        fbrb="fb-rebuild";
+        fbup="fb-up";
+        fbrm="fb-rm";
+        fbdns="fb dns-status | rg $1 --color never | rg $2 --color never";
+        fbst = "fb status | rg \"$1|Host|\+|\| Featurebranch\" --color never";
 
-redis="docker compose exec redis redis-cli";
+        redis="docker compose exec redis redis-cli";
 
-j="z";
+        j="z";
 
-ls="eza";
-ll="eza -l";
-la="eza -lag";
+        ls="eza";
+        ll="eza -l";
+        la="eza -lag";
 
-lf="fd . -t f";
+        lf="fd . -t f";
 
-cat="bat";
+        cat="bat";
       };
-
-      promptInit = ''
-        eval "$(oh-my-posh init zsh)"
-        eval "$(zoxide init zsh)"
-      '';
     };
   };
 
