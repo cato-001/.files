@@ -72,7 +72,7 @@ fbst = "fb status | rg \"$1|Host|\+|\| Featurebranch\" --color never";
 
 redis="docker compose exec redis redis-cli";
 
-alias j="z";
+j="z";
 
 ls="eza";
 ll="eza -l";
