@@ -1,8 +1,10 @@
-vim.lsp.start({
-  name = 'rickshaw',
-  cmd = { 'rickshaw' },
-  root_dir = vim.fs.root(0, '.git'),
-})
+if vim.fn.executable('rickshaw') == 1 then
+  vim.lsp.start({
+    name = 'rickshaw',
+    cmd = { 'rickshaw' },
+    root_dir = vim.fs.root(0, '.git'),
+  })
+end
 
 vim.api.nvim_create_user_command('AttachRickshaw', function()
   local buffer = vim.api.nvim_get_current_buf()

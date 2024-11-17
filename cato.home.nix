@@ -1,38 +1,43 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "cato";
-  home.homeDirectory = "/home/cato";
+  home = {
+    username = "cato";
+    homeDirectory = "/home/cato";
+    stateVersion = "24.05";
 
-  home.stateVersion = "24.05";
+    packages = with pkgs; [
+      tmux
+      zsh
+      neovim
+      oh-my-posh
 
-  home.packages = [
-    pkgs.tmux
-    pkgs.zsh
-    pkgs.neovim
-    pkgs.oh-my-posh
+      ripgrep
+      fd
+      eza
+      zoxide
+      fzf
+      bat
 
-    pkgs.ripgrep
-    pkgs.fd
-    pkgs.eza
-    pkgs.zoxide
-    pkgs.fzf
-    pkgs.bat
+      gh
+      git
 
-    pkgs.gh
-    pkgs.git
+      go
+      rustup
+      lua
+      php81
+      php81Packages.composer
+    ];
 
-    pkgs.go
-    pkgs.rustup
-    pkgs.lua
-    pkgs.php81
-    pkgs.php81Packages.composer
-  ];
+    file = {
+      ".zshrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.files/.config/zsh/rc.zsh";
+      ".p10k.zsh".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.files/.config/zsh/p10k.zsh";
+      ".ideavimrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.files/.config/ideavimrc";
+    };
 
-  home.file = {
-    ".zshrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.files/.config/zsh/rc.zsh";
-    ".p10k.zsh".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.files/.config/zsh/p10k.zsh";
-    ".ideavimrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.files/.config/ideavimrc";
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
   };
 
   programs = {
@@ -83,12 +88,6 @@
         cat="bat";
       };
     };
+    home-manager.enable = true;
   };
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }

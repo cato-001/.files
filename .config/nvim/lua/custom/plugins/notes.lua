@@ -1,3 +1,5 @@
+local plugins = require('config.note.plugins')
+
 return {
   {
     'cato-001/scatter.nvim',
@@ -25,7 +27,10 @@ return {
         today = {
           command = 'Today'
         }
-      }
+      },
+      plugins = {
+        plugins.jira
+      },
     },
     dir = "~/projects/scatter.nvim",
     config = true,
