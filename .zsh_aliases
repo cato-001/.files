@@ -70,7 +70,7 @@ alias fbup="fb-up"
 alias fbrm="fb-rm"
 
 fbdns() {
-  fb dns-status | rg $1 | rg $2 | xargs -i echo "{}"
+  fb dns-status | rg $1 --color never | rg $2 --color never
 }
 
 fbst() {
