@@ -117,23 +117,27 @@ min_time = 0
 style = "yellow"
 
 [python]
-format = "python\\([$version]($style)\\) "
+format = "python "
 style = "mauve"
 
 [rust]
-format = "rust\\([$version]($style)\\) "
+format = "rust "
 style = "mauve"
 
 [nodejs]
-format = "node(\\([$version]($style)\\)) "
+format = "node "
 style = "mauve"
 
 [lua]
-format = "lua\\([$version]($style)\\) "
+format = "lua "
 style = "mauve"
 
 [zig]
-format = "zig\\([$version]($style)\\) "
+format = "zig "
+style = "mauve"
+
+[golang]
+format = "go"
 style = "mauve"
 
 [gcloud]

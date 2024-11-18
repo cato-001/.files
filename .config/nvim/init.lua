@@ -1,13 +1,13 @@
-local options = require 'custom.options'
+local options = require('custom.options')
 options.set_leader()
 options.setup()
 
-local keymaps = require 'custom.keymaps'
+local keymaps = require('custom.keymaps')
 keymaps.setup()
 keymaps.setup_system_register()
 keymaps.setup_editor_defaults()
 
-local commands = require 'custom.commands'
+local commands = require('custom.commands')
 commands.setup_autoformat({
   '*.lua',
   '*.rs',
@@ -65,7 +65,7 @@ require('lazy').setup({
         'nvim-telescope/telescope-fzf-native.nvim',
         build = 'make',
         cond = function()
-          return vim.fn.executable 'make' == 1
+          return vim.fn.executable('make') == 1
         end,
       },
     },
@@ -98,7 +98,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
-require('telescope').setup {
+require('telescope').setup({
   defaults = {
     mappings = {
       i = {
@@ -107,7 +107,7 @@ require('telescope').setup {
       },
     },
   },
-}
+})
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
@@ -125,7 +125,6 @@ vim.keymap.set('n', '<leader>/', function()
 end, { desc = '[/] Fuzzily search in current buffer' })
 
 keymaps.setup_search()
-keymaps.setup_gotos()
 
 -- [[ Treesitter ]]
 vim.defer_fn(function()

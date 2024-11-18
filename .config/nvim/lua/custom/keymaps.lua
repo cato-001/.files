@@ -36,13 +36,10 @@ local function setup_search()
   nmap('<leader>gf', telescope_builtin.git_files, '[f]iles')
 end
 
-local function setup_gotos()
-end
-
 local function setup_editor_defaults()
-  nmap('U', '<C-R>', 'Redo')
-  nmap('V', 'V_', 'Goto start in Visual-Line Mode')
-  nmap('<Esc>', ':nohlsearch<Cr>', 'Turn off search highlights')
+  nmap('U', '<C-R>', 'Redo', { noremap = true })
+  nmap('V', 'V_', 'Goto start in Visual-Line Mode', { noremap = true })
+  nmap('<Esc>', ':nohlsearch<Cr>', 'Turn off search highlights', { noremap = true })
 
   imap('<C-Z>', '<C-V>', 'use <CTRL-Z> to insert special characters', { noremap = true })
   imap('', '<Esc>wdbi', '<CTRL-BS> to delete the current word', { noremap = true })
@@ -58,7 +55,6 @@ end
 return {
   setup = setup,
   setup_search = setup_search,
-  setup_gotos = setup_gotos,
   setup_system_register = setup_system_register,
   setup_editor_defaults = setup_editor_defaults,
 }
