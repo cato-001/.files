@@ -18,6 +18,7 @@
       zoxide
       fzf
       bat
+      mdbook
 
       gh
       git
