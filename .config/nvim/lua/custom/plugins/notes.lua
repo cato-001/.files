@@ -23,13 +23,13 @@ return {
           search = { '<leader>n', desc = 'Search [n]otes' },
         }
       },
-      carlender = {
+      calender = {
         today = {
           command = 'Today'
         }
       },
-      plugins = {
-        plugins.jira
+      modules = {
+        jira = {},
       },
     },
     dir = "~/projects/scatter.nvim",
