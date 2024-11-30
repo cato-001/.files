@@ -1,4 +1,4 @@
-{ config, pkgs, ... }
+{ config, pkgs, ... }:
 
 {
   programs = {
@@ -8,7 +8,7 @@
       escapeTime = 0;
       keyMode = "vi";
       terminal = "tmux-256color";
-      histroyLimit = 50000;
+      historyLimit = 50000;
       clock24 = true;
       baseIndex = 1;
       aggressiveResize = true;
