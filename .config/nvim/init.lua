@@ -234,7 +234,7 @@ local on_attach = function(_, bufnr)
   nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[a]dd directory')
   nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[r]emove directory')
   nmap('<leader>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    vim.print(vim.lsp.buf.list_workspace_folders())
   end, '[l]ist directory')
 
   -- Create a command `:Format` local to the LSP buffer
@@ -284,8 +284,9 @@ local servers = {
   },
   lua_ls = {
     Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
+      diagnostics = { enable = true },
+      workspace = { checkThirdParty = true },
+      hint = { enable = true },
     },
   },
   pylsp = {

@@ -88,7 +88,7 @@ if [[ -d /mnt/c/Windows ]]; then
     /mnt/c/Windows/system32/wsl.exe -d ${WSL_DISTRO_NAME} -u root /usr/local/bin/startup
   fi
 
-  export DISPLAY=host.docker.internal:0.0 #GWSL
+  # export DISPLAY=host.docker.internal:0.0 #GWSL
   export PULSE_SERVER=tcp:host.docker.internal #GWSL
   export LIBGL_ALWAYS_INDIRECT=1 #GWSL
   export LD_LIBRARY_PATH=/usr/local/lib

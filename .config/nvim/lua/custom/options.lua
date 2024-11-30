@@ -1,4 +1,5 @@
 local function setup()
+  vim.opt.scroll = 16
   vim.opt.scrolloff = 10
   vim.opt.startofline = true
 
