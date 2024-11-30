@@ -15,7 +15,7 @@
 
       plugins = with pkgs; [
         tmuxPlugins.better-mouse-mode
-        tmuxPlugins.tmux-yank
+        tmuxPlugins.yank
 
         tmuxPlugins.vim-tmux-navigator
         vimPlugins.vim-tmux-navigator
