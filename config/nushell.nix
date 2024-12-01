@@ -1,12 +1,10 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   packages = with pkgs; [
     nushell
   ];
-  programs = {
-    nushell = {
-      enable = true;
-    };
+  program = {
+    enable = true;
   };
 }

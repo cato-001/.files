@@ -19,9 +19,6 @@
 
         modules = [
           ./home/cato.nix
-
-          ./config/nushell.nix
-          ./config/tmux.nix
         ];
       };
     };
