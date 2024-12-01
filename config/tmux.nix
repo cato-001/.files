@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  packages = with pkgs; [
+    tmux
+  ];
   programs = {
     tmux = {
       enable = true;

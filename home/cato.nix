@@ -7,12 +7,11 @@
     stateVersion = "24.05";
 
     packages = with pkgs; [
-      tmux
       nushell
       oh-my-posh
 
+      neovim
       vimPlugins.vim-tmux-navigator
-      vimPlugins.neovim-sensible
 
       ripgrep
       fd
@@ -31,12 +30,6 @@
       php81
       php81Packages.composer
     ];
-
-    file = {
-      # ".zshrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.files/.config/zsh/rc.zsh";
-      # ".p10k.zsh".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.files/.config/zsh/p10k.zsh";
-      ".ideavimrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.files/.config/ideavimrc";
-    };
 
     sessionVariables = {
       EDITOR = "nvim";

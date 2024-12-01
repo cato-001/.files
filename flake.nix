@@ -18,7 +18,7 @@
         inherit pkgs;
 
         modules = [
-          ./cato.home.nix
+          ./home/cato.nix
 
           ./config/nushell.nix
           ./config/tmux.nix
