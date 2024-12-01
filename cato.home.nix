@@ -9,8 +9,10 @@
     packages = with pkgs; [
       tmux
       nushell
-      neovim
       oh-my-posh
+
+      vimPlugins.vim-tmux-navigator
+      vimPlugins.neovim-sensible
 
       ripgrep
       fd
