@@ -21,7 +21,7 @@
         vimPlugins.vim-tmux-navigator
 
         tmuxPlugins.sensible
-        tmuxPlugins.neovim-sensible
+        vimPlugins.neovim-sensible
 
         tmuxPlugins.catppuccin
       ];
