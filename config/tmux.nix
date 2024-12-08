@@ -14,6 +14,7 @@
     clock24 = true;
     baseIndex = 1;
     aggressiveResize = true;
+    shell = builtins.toString pkgs.nushell;
 
     plugins = with pkgs; [
       tmuxPlugins.better-mouse-mode
@@ -34,9 +35,6 @@
 
       # setup scrolling
       set -g mouse on
-
-      # setup shell
-      set -g default-shell /usr/bin/zsh
 
       # setup alerts
       set -g visual-activity off
