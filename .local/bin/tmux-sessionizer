@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    choices="$(find ~/.config ~/projects ~/ -mindepth 1 -maxdepth 1 -type d)\n$(tmux list-sessions | rg -o '^(.+?):' --replace '$1')"
+    choices="$(find ~/.config ~/projects ~/tickets ~/ -mindepth 1 -maxdepth 1 -type d)\n$(tmux list-sessions | rg -o '^(.+?):' --replace '$1')"
     selected=$(echo "$choices" | fzf)
 fi
 

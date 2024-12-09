@@ -23,7 +23,6 @@ zstyle ':omz:update' frequency 1
 
 plugins=(
   direnv
-  git
   npm
   nvm
   ssh-agent

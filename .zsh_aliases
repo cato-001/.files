@@ -14,14 +14,29 @@ alias cini="cargo init"
 alias dc="docker compose"
 alias dcex="docker compose exec"
 alias dcup="docker compose up -d"
+
 dcpup() {
   docker compose pull
   docker compose up -d
 }
 
+# setup git
+alias g="git"
+alias gst="git status"
+alias gc="git commit"
+alias gp="git push"
+alias gl="git pull"
+
+gaa() {
+  git add --all
+  git status
+}
+
 # setup nvim
 alias v="nvim-open"
 alias vim="nvim"
+
+alias today="nvim +Today"
 
 whichv() {
   which $1 | xargs nvim

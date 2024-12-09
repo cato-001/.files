@@ -28,6 +28,8 @@ return {
       },
       modules = {
         jira = {},
+        scripting = {},
+        pandoc = {},
       },
     },
     dir = "~/projects/scatter.nvim",
