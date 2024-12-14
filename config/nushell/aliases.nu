@@ -23,6 +23,7 @@ alias cini = cargo init
 alias dc = docker compose
 alias dcex = docker compose exec
 alias dcup = docker compose up -d
+alias dcs = docker compose stop
 def dcpup [] {
     docker compose pull
     docker compose up -d
@@ -48,5 +49,3 @@ alias ll = eza -l
 alias la = eza -lag
 
 alias lf = fd . -t f
-
-alias cat = bat
