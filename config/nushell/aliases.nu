@@ -45,8 +45,6 @@ alias redis = docker compose exec redis redis-cli
 
 alias j = z
 
-alias ls = eza
-alias ll = eza -l
-alias la = eza -lag
+alias la = ls -la
 
 alias lf = fd . -t f
