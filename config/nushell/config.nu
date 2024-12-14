@@ -82,20 +82,19 @@ $env.config = {
     }
 
     table: {
-        mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
-        index_mode: always # "always" show indexes, "never" show indexes, "auto" = show indexes when a table has "index" column
-        show_empty: true # show 'empty list' and 'empty record' placeholders for command output
-        padding: { left: 1, right: 1 } # a left right padding of each column in a table
+        mode: rounded
+        index_mode: always
+        show_empty: true
+        padding: { left: 1, right: 1 }
         trim: {
-            methodology: wrapping # wrapping or truncating
-            wrapping_try_keep_words: true # A strategy used by the 'wrapping' methodology
-            truncating_suffix: "..." # A suffix used by the 'truncating' methodology
+            methodology: wrapping
+            wrapping_try_keep_words: true
+            truncating_suffix: "..."
         }
-        header_on_separator: false # show header text on separator/border line
-        # abbreviated_row_count: 10 # limit data rows from top and bottom after reaching a set point
+        header_on_separator: false
     }
 
-    error_style: "fancy" # "fancy" or "plain" for screen reader-friendly error messages
+    error_style: "fancy"
 
     display_errors: {
         exit_code: true
@@ -134,26 +133,28 @@ $env.config = {
         external: {
             enable: true
             max_results: 100
-            completer: null # check 'carapace_completer' above as an example
+            completer: {|spans|
+                carapace $spans.0 nushell ...$spans | from json
+            }
         }
         use_ls_colors: true # set this to true to enable file/path/directory completions using LS_COLORS
     }
 
     filesize: {
-        metric: false # true => KB, MB, GB (ISO standard), false => KiB, MiB, GiB (Windows standard)
-        format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, auto
+        metric: true
+        format: "auto"
     }
 
     cursor_shape: {
-        emacs: line # block, underscore, line, blink_block, blink_underscore, blink_line, inherit to skip setting cursor shape (line is the default)
-        vi_insert: block # block, underscore, line, blink_block, blink_underscore, blink_line, inherit to skip setting cursor shape (block is the default)
-        vi_normal: underscore # block, underscore, line, blink_block, blink_underscore, blink_line, inherit to skip setting cursor shape (underscore is the default)
+        emacs: underscore
+        vi_insert: line
+        vi_normal: block
     }
 
     color_config: $dark_theme
-    footer_mode: 25 # always, never, number_of_rows, auto
-    float_precision: 2 # the precision for displaying floats in tables
-    buffer_editor: null # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
+    footer_mode: always
+    float_precision: 2
+    buffer_editor: nvim
     use_ansi_coloring: true
     bracketed_paste: true # enable bracketed paste, currently useless on windows
     edit_mode: vi
@@ -812,3 +813,5 @@ $env.config = {
         }
     ]
 }
+
+source ~/.config/nushell/aliases.nu

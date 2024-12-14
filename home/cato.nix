@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 let
-  nushellConfig = import ../config/nushell.nix { pkgs = pkgs; };
-  tmuxConfig = import ../config/tmux.nix { pkgs = pkgs; };
+  configDir = "${config.xdg.configHome}";
+  nushellDir = "${configDir}/nushell";
 in
 {
   home = {
@@ -16,6 +16,10 @@ in
       neovim
       vimPlugins.vim-tmux-navigator
 
+      zellij
+      nushell
+      carapace
+
       ripgrep
       fd
       eza
@@ -23,6 +27,8 @@ in
       fzf
       bat
       mdbook
+
+      docker
 
       gh
       git
@@ -32,19 +38,21 @@ in
       lua
       php81
       php81Packages.composer
-    ]
-      ++ nushellConfig.packages
-      ++ tmuxConfig.packages;
+    ];
 
     sessionVariables = {
       EDITOR = "nvim";
+      NUSHELL_DIR = nushellDir;
     };
+
+    file."${nushellDir}/aliases.nu".source = ../config/nushell/aliases.nu;
   };
 
   programs = {
     home-manager.enable = true;
-
-    nushell = nushellConfig.program;
-    tmux = tmuxConfig.program;
+    nushell = {
+      enable = true;
+      configFile.source = ../config/nushell/config.nu;
+    };
   };
 }
