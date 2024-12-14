@@ -45,7 +45,7 @@ in
       NUSHELL_DIR = nushellDir;
     };
 
-    file."${nushellDir}/aliases.nu".source = ../config/nushell/aliases.nu;
+    file."${nushellDir}/aliases.nu".source = config.lib.file.mkOutOfStoreSymlink ../config/nushell/aliases.nu;
   };
 
   programs = {

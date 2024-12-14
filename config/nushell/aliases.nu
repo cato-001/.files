@@ -32,6 +32,7 @@ def dcpup [] {
 alias v = nvim-open
 alias vim = nvim
 alias today = nvim +Today
+alias ff = nvim +"Telescope find_files"
 
 alias py = python3
 
