@@ -75,7 +75,7 @@
 
     tealdeer = {
       enable = true;
-      updates = {
+      settings.updates = {
         auto_updates = true;
         auto_update_interval_hours = "12";
       };
