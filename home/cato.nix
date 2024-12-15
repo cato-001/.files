@@ -1,9 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  configDir = "${config.xdg.configHome}";
-  nushellDir = "${configDir}/nushell";
-in
 {
   home = {
     username = "cato";
@@ -42,17 +38,27 @@ in
 
     sessionVariables = {
       EDITOR = "nvim";
-      NUSHELL_DIR = nushellDir;
     };
 
-    file."${nushellDir}/aliases.nu".source = config.lib.file.mkOutOfStoreSymlink ../config/nushell/aliases.nu;
+    file = {
+      "${config.xdg.configHome}/nushell/aliases.nu".source = config.lib.file.mkOutOfStoreSymlink ../config/nushell/aliases.nu;
+      "${config.xdg.configHome}/nushell/zoxide.nu".source = config.lib.file.mkOutOfStoreSymlink ../config/nushell/zoxide.nu;
+
+      "${config.home.homeDirectory}/.hushlogin".text = "";
+    };
   };
 
   programs = {
     home-manager.enable = true;
+
     nushell = {
       enable = true;
       configFile.source = ../config/nushell/config.nu;
+      envFile.source = ../config/nushell/env.nu;
+    };
+
+    zellij = {
+      enable = true;
     };
   };
 }

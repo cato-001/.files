@@ -814,4 +814,5 @@ $env.config = {
     ]
 }
 
+source ~/.config/nushell/zoxide.nu
 source ~/.config/nushell/aliases.nu

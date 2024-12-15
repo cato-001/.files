@@ -43,7 +43,7 @@ alias fbrm = fb-rm
 
 alias redis = docker compose exec redis redis-cli
 
-alias j = z
+alias j = __zoxide_z
 
 alias la = ls -la
 
