@@ -77,7 +77,7 @@
       enable = true;
       settings.updates = {
         auto_update = true;
-        auto_update_interval_hours = "12";
+        auto_update_interval_hours = 24;
       };
     };
   };
