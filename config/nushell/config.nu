@@ -1,4 +1,4 @@
-export const carapace_completer = {|spans|
+let carapace_completer = {|spans|
     carapace $spans.0 nushell ...$spans | from json
 }
 
@@ -131,7 +131,7 @@ $env.config = {
         external: {
             enable: true
             max_results: 100
-            completer: carapace_completer
+            completer: $carapace_completer
         }
         # use_ls_colors: true
     }
