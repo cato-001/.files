@@ -79,7 +79,7 @@
       settings = {
         updates = {
           auto_updates = true;
-          auto_update_interval_hours = literalExpression "12";
+          auto_update_interval_hours = "12";
         };
       };
     };
