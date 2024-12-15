@@ -72,5 +72,9 @@
         "--multi"
       ];
     };
+
+    tealdeer = {
+      enable = true;
+    };
   };
 }
