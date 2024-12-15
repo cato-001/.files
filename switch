@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+nix-shell --packages home-manager --run "home-manager switch --flake ."
