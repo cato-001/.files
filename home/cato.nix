@@ -23,6 +23,7 @@
       fzf
       bat
       mdbook
+      tealdeer
 
       docker
 
