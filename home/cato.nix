@@ -13,17 +13,14 @@
       vimPlugins.vim-tmux-navigator
 
       zellij
-      nushell
       carapace
 
       ripgrep
       fd
       eza
       zoxide
-      fzf
       bat
       mdbook
-      tealdeer
 
       docker
 
@@ -42,8 +39,14 @@
     };
 
     file = {
-      "${config.xdg.configHome}/nushell/aliases.nu".source = config.lib.file.mkOutOfStoreSymlink ../config/nushell/aliases.nu;
-      "${config.xdg.configHome}/nushell/zoxide.nu".source = config.lib.file.mkOutOfStoreSymlink ../config/nushell/zoxide.nu;
+      "${config.xdg.configHome}/nushell/aliases.nu" = {
+        source = config.lib.file.mkOutOfStoreSymlink ../config/nushell/aliases.nu;
+        force = true;
+      };
+      "${config.xdg.configHome}/nushell/zoxide.nu" = {
+        source = config.lib.file.mkOutOfStoreSymlink ../config/nushell/zoxide.nu;
+        force = true;
+      };
 
       "${config.home.homeDirectory}/.hushlogin".text = "";
     };

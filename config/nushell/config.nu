@@ -1,3 +1,7 @@
+export const carapace_completer = {|spans|
+    carapace $spans.0 nushell ...$spans | from json
+}
+
 let dark_theme = {
     # color for nushell primitives
     separator: white
@@ -65,12 +69,6 @@ let dark_theme = {
     shape_raw_string: light_purple
 }
 
-# External completer example
-# let carapace_completer = {|spans|
-#     carapace $spans.0 nushell ...$spans | from json
-# }
-
-# The default config record. This is where much of your global configuration is setup.
 $env.config = {
     show_banner: false
     ls: {
@@ -125,19 +123,17 @@ $env.config = {
     }
 
     completions: {
-        case_sensitive: false
-        quick: true
-        partial: true
-        algorithm: "fuzzy"
-        sort: "smart"
+        # case_sensitive: false
+        # quick: true
+        # partial: true
+        # algorithm: "fuzzy"
+        # sort: "smart"
         external: {
             enable: true
             max_results: 100
-            completer: {|spans|
-                carapace $spans.0 nushell ...$spans | from json
-            }
+            completer: carapace_completer
         }
-        use_ls_colors: true # set this to true to enable file/path/directory completions using LS_COLORS
+        # use_ls_colors: true
     }
 
     filesize: {
