@@ -75,6 +75,13 @@
 
     tealdeer = {
       enable = true;
+
+      settings = {
+        updates = {
+          auto_updates = true;
+          auto_update_interval_hours = literalExpression "12";
+        };
+      };
     };
   };
 }
